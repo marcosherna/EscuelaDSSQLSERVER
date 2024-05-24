@@ -9,6 +9,7 @@ using EscuelaDS.GUI.Rector.Aulas;
 using EscuelaDS.GUI.Rector.Docentes;
 using EscuelaDS.GUI.Rector.Materias;
 using EscuelaDS.GUI.Rector.Turnos;
+using EscuelaDS.GUI.Secretariado.Estudiantes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -92,6 +93,12 @@ namespace EscuelaDS
         {
             GestionDocentes gestionDocentes = new GestionDocentes();
             gestionDocentes.ShowDialog();
+        }
+
+        private void gestionDeEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionEstudiantes gestionEstudiantes = new GestionEstudiantes();   
+            gestionEstudiantes.ShowDialog();
         }
     }
 }

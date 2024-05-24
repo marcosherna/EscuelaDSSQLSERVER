@@ -64,17 +64,22 @@
     <Compile Include="CLS\Administracion\Especialidad.cs" />
     <Compile Include="CLS\Catalogos\Departamento.cs" />
     <Compile Include="CLS\Catalogos\Distrito.cs" />
+    <Compile Include="CLS\Catalogos\Genero.cs" />
     <Compile Include="CLS\Catalogos\Municipio.cs" />
     <Compile Include="CLS\Catalogos\Pais.cs" />
     <Compile Include="CLS\Dtos\DepartamentoDto.cs" />
     <Compile Include="CLS\Dtos\DocenteDto.cs" />
     <Compile Include="CLS\Dtos\EmpleadoDto.cs" />
+    <Compile Include="CLS\Dtos\EstudianteDto.cs" />
     <Compile Include="CLS\Dtos\MunicipioDto.cs" />
     <Compile Include="CLS\Dtos\DistritoDto.cs" />
     <Compile Include="CLS\Rector\Aula.cs" />
     <Compile Include="CLS\Rector\Docente.cs" />
     <Compile Include="CLS\Rector\Materia.cs" />
     <Compile Include="CLS\Rector\Turno.cs" />
+    <Compile Include="CLS\Secretaria\Encargado.cs" />
+    <Compile Include="CLS\Secretaria\Estudiante.cs" />
+    <Compile Include="CLS\Secretaria\Grupo.cs" />
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +248,24 @@
     <Compile Include="GUI\Rector\Turnos\GestionTurnos.Designer.cs">
       <DependentUpon>GestionTurnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Secretariado\Encargados\EdicionEncargados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Encargados\EdicionEncargados.Designer.cs">
+      <DependentUpon>EdicionEncargados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\EdicioEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\EdicioEstudiantes.Designer.cs">
+      <DependentUpon>EdicioEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.Designer.cs">
+      <DependentUpon>GestionEstudiantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DashBoard.resx">
@@ -286,6 +309,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Rector\Turnos\GestionTurnos.resx">
       <DependentUpon>GestionTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Encargados\EdicionEncargados.resx">
+      <DependentUpon>EdicionEncargados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Estudiantes\EdicioEstudiantes.resx">
+      <DependentUpon>EdicioEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.resx">
+      <DependentUpon>GestionEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
