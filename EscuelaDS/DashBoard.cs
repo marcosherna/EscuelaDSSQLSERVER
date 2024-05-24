@@ -10,6 +10,7 @@ using EscuelaDS.GUI.Rector.Docentes;
 using EscuelaDS.GUI.Rector.Materias;
 using EscuelaDS.GUI.Rector.Turnos;
 using EscuelaDS.GUI.Secretariado.Estudiantes;
+using EscuelaDS.GUI.Secretariado.Grupos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,6 +100,12 @@ namespace EscuelaDS
         {
             GestionEstudiantes gestionEstudiantes = new GestionEstudiantes();   
             gestionEstudiantes.ShowDialog();
+        }
+
+        private void gestionDeGruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionGrupos gestionGrupos = new GestionGrupos();
+            gestionGrupos.ShowDialog();
         }
     }
 }

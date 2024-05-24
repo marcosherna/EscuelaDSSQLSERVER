@@ -44,6 +44,7 @@
             this.gestionDeMateriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeDocentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeGruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +137,8 @@
             this.gestionDeTurnosToolStripMenuItem,
             this.gestionDeMateriasToolStripMenuItem,
             this.gestionDeDocentesToolStripMenuItem,
-            this.gestionDeEstudiantesToolStripMenuItem});
+            this.gestionDeEstudiantesToolStripMenuItem,
+            this.gestionDeGruposToolStripMenuItem});
             this.rectoriaToolStripMenuItem.Name = "rectoriaToolStripMenuItem";
             this.rectoriaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.rectoriaToolStripMenuItem.Text = "Rectoria";
@@ -176,6 +178,13 @@
             this.gestionDeEstudiantesToolStripMenuItem.Text = "Gestion de Estudiantes";
             this.gestionDeEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEstudiantesToolStripMenuItem_Click);
             // 
+            // gestionDeGruposToolStripMenuItem
+            // 
+            this.gestionDeGruposToolStripMenuItem.Name = "gestionDeGruposToolStripMenuItem";
+            this.gestionDeGruposToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.gestionDeGruposToolStripMenuItem.Text = "Gestion de Grupos";
+            this.gestionDeGruposToolStripMenuItem.Click += new System.EventHandler(this.gestionDeGruposToolStripMenuItem_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,5 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeMateriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeDocentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeEstudiantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeGruposToolStripMenuItem;
     }
 }
