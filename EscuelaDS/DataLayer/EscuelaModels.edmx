@@ -1,0 +1,1476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="escuela_ds2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AsignacionRolesOpciones">
+          <Key>
+            <PropertyRef Name="ID_AsignacionRol" />
+          </Key>
+          <Property Name="ID_AsignacionRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Rol" Type="int" Nullable="false" />
+          <Property Name="ID_Opcion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Aulas">
+          <Key>
+            <PropertyRef Name="ID_Aula" />
+          </Key>
+          <Property Name="ID_Aula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Edificio" Type="varchar" MaxLength="20" />
+          <Property Name="Piso" Type="varchar" MaxLength="10" />
+          <Property Name="NumeroAula" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Calificaciones">
+          <Key>
+            <PropertyRef Name="ID_Calificacion" />
+          </Key>
+          <Property Name="ID_Calificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Materia" Type="int" Nullable="false" />
+          <Property Name="NIE" Type="int" Nullable="false" />
+          <Property Name="ID_Docente" Type="int" Nullable="false" />
+          <Property Name="Examen1" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="Examen2" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="Examen3" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="ExamenFinal" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="Tareas" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="Promedio" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="Estado" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Cargos">
+          <Key>
+            <PropertyRef Name="ID_Cargo" />
+          </Key>
+          <Property Name="ID_Cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cargo" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="ID_Departamento" />
+          </Key>
+          <Property Name="ID_Departamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Departamento" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ID_Pais" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direcciones">
+          <Key>
+            <PropertyRef Name="ID_Direccion" />
+          </Key>
+          <Property Name="ID_Direccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Linea1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Linea2" Type="varchar" MaxLength="100" />
+          <Property Name="ID_Distrito" Type="int" Nullable="false" />
+          <Property Name="CodigoPostal" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Distritos">
+          <Key>
+            <PropertyRef Name="ID_Distrito" />
+          </Key>
+          <Property Name="ID_Distrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Distrito" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ID_Municipio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Docentes">
+          <Key>
+            <PropertyRef Name="ID_Docente" />
+          </Key>
+          <Property Name="ID_Docente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Empleado" Type="int" Nullable="false" />
+          <Property Name="ID_Especialidad" Type="int" Nullable="false" />
+          <Property Name="Escalafon" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="ID_Empleado" />
+          </Key>
+          <Property Name="ID_Empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DUI_Empleado" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ISSS_Empleado" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="NombresEmpleado" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ApellidosEmpleado" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="FechaNacEmpleado" Type="date" Nullable="false" />
+          <Property Name="TelefonoEmpleado" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="100" />
+          <Property Name="ID_Cargo" Type="int" Nullable="false" />
+          <Property Name="ID_Direccion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Encargados">
+          <Key>
+            <PropertyRef Name="ID_Encargado" />
+          </Key>
+          <Property Name="ID_Encargado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombresEncargado" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ApellidosEncargado" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="TelefonoEncargado" Type="varchar" MaxLength="10" />
+          <Property Name="DUI_Encargado" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Direccion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especialidades">
+          <Key>
+            <PropertyRef Name="ID_Especialidad" />
+          </Key>
+          <Property Name="ID_Especialidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreEspecialidad" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Carrera" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estudiantes">
+          <Key>
+            <PropertyRef Name="NIE" />
+          </Key>
+          <Property Name="NIE" Type="int" Nullable="false" />
+          <Property Name="NombresEstudiante" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ApellidosEstudiante" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="FechaNacEstudiante" Type="date" Nullable="false" />
+          <Property Name="GeneroEstudiante" Type="char" MaxLength="1" />
+          <Property Name="TelefonoEstudiante" Type="varchar" MaxLength="10" />
+          <Property Name="ID_Encargado" Type="int" Nullable="false" />
+          <Property Name="ID_Direccion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="ID_Grupo" />
+          </Key>
+          <Property Name="ID_Grupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Grado" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Seccion" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="ID_Turno" Type="int" Nullable="false" />
+          <Property Name="ID_Aula" Type="int" Nullable="false" />
+          <Property Name="ID_Docente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Materias">
+          <Key>
+            <PropertyRef Name="ID_Materia" />
+          </Key>
+          <Property Name="ID_Materia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreMateria" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Matriculas">
+          <Key>
+            <PropertyRef Name="ID_Matricula" />
+          </Key>
+          <Property Name="ID_Matricula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NIE" Type="int" Nullable="false" />
+          <Property Name="ID_Grupo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipios">
+          <Key>
+            <PropertyRef Name="ID_Municipio" />
+          </Key>
+          <Property Name="ID_Municipio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Municipio" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ID_Departamento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Opciones">
+          <Key>
+            <PropertyRef Name="ID_Opcion" />
+          </Key>
+          <Property Name="ID_Opcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreOpcion" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="ID_Pais" />
+          </Key>
+          <Property Name="ID_Pais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pais" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="ID_Rol" />
+          </Key>
+          <Property Name="ID_Rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreRol" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Turnos">
+          <Key>
+            <PropertyRef Name="ID_Turno" />
+          </Key>
+          <Property Name="ID_Turno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Turno" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="ID_Usuario" />
+          </Key>
+          <Property Name="ID_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Empleado" Type="int" Nullable="false" />
+          <Property Name="ID_Rol" Type="int" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Asignacio__ID_Op__5535A963">
+          <End Role="Opciones" Type="Self.Opciones" Multiplicity="1" />
+          <End Role="AsignacionRolesOpciones" Type="Self.AsignacionRolesOpciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opciones">
+              <PropertyRef Name="ID_Opcion" />
+            </Principal>
+            <Dependent Role="AsignacionRolesOpciones">
+              <PropertyRef Name="ID_Opcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Asignacio__ID_Ro__5441852A">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="AsignacionRolesOpciones" Type="Self.AsignacionRolesOpciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="ID_Rol" />
+            </Principal>
+            <Dependent Role="AsignacionRolesOpciones">
+              <PropertyRef Name="ID_Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Calificac__ID_Do__72C60C4A">
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docentes">
+              <PropertyRef Name="ID_Docente" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="ID_Docente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Calificac__ID_Ma__70DDC3D8">
+          <End Role="Materias" Type="Self.Materias" Multiplicity="1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materias">
+              <PropertyRef Name="ID_Materia" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="ID_Materia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Calificacio__NIE__71D1E811">
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiantes">
+              <PropertyRef Name="NIE" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="NIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Departame__ID_Pa__398D8EEE">
+          <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paises">
+              <PropertyRef Name="ID_Pais" />
+            </Principal>
+            <Dependent Role="Departamentos">
+              <PropertyRef Name="ID_Pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__ID_Di__4222D4EF">
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="1" />
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distritos">
+              <PropertyRef Name="ID_Distrito" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="ID_Distrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Distritos__ID_Mu__3F466844">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="ID_Municipio" />
+            </Principal>
+            <Dependent Role="Distritos">
+              <PropertyRef Name="ID_Municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Docentes__ID_Emp__4CA06362">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="ID_Empleado" />
+            </Principal>
+            <Dependent Role="Docentes">
+              <PropertyRef Name="ID_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Docentes__ID_Esp__4D94879B">
+          <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="1" />
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="ID_Especialidad" />
+            </Principal>
+            <Dependent Role="Docentes">
+              <PropertyRef Name="ID_Especialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleados__ID_Ca__46E78A0C">
+          <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargos">
+              <PropertyRef Name="ID_Cargo" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="ID_Cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleados__ID_Di__47DBAE45">
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direcciones">
+              <PropertyRef Name="ID_Direccion" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="ID_Direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Encargado__ID_Di__6477ECF3">
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="1" />
+          <End Role="Encargados" Type="Self.Encargados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direcciones">
+              <PropertyRef Name="ID_Direccion" />
+            </Principal>
+            <Dependent Role="Encargados">
+              <PropertyRef Name="ID_Direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estudiant__ID_Di__68487DD7">
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="1" />
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direcciones">
+              <PropertyRef Name="ID_Direccion" />
+            </Principal>
+            <Dependent Role="Estudiantes">
+              <PropertyRef Name="ID_Direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estudiant__ID_En__6754599E">
+          <End Role="Encargados" Type="Self.Encargados" Multiplicity="1" />
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encargados">
+              <PropertyRef Name="ID_Encargado" />
+            </Principal>
+            <Dependent Role="Estudiantes">
+              <PropertyRef Name="ID_Encargado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Grupos__ID_Aula__60A75C0F">
+          <End Role="Aulas" Type="Self.Aulas" Multiplicity="1" />
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aulas">
+              <PropertyRef Name="ID_Aula" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="ID_Aula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Grupos__ID_Docen__619B8048">
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="1" />
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docentes">
+              <PropertyRef Name="ID_Docente" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="ID_Docente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Grupos__ID_Turno__5FB337D6">
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="1" />
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnos">
+              <PropertyRef Name="ID_Turno" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="ID_Turno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matricula__ID_Gr__6C190EBB">
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="1" />
+          <End Role="Matriculas" Type="Self.Matriculas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupos">
+              <PropertyRef Name="ID_Grupo" />
+            </Principal>
+            <Dependent Role="Matriculas">
+              <PropertyRef Name="ID_Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matriculas__NIE__6B24EA82">
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="1" />
+          <End Role="Matriculas" Type="Self.Matriculas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiantes">
+              <PropertyRef Name="NIE" />
+            </Principal>
+            <Dependent Role="Matriculas">
+              <PropertyRef Name="NIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Municipio__ID_De__3C69FB99">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="ID_Departamento" />
+            </Principal>
+            <Dependent Role="Municipios">
+              <PropertyRef Name="ID_Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuarios__ID_Emp__5812160E">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="ID_Empleado" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="ID_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuarios__ID_Rol__59063A47">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="ID_Rol" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="ID_Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="escuela_ds2ModelStoreContainer">
+          <EntitySet Name="AsignacionRolesOpciones" EntityType="Self.AsignacionRolesOpciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Aulas" EntityType="Self.Aulas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direcciones" EntityType="Self.Direcciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distritos" EntityType="Self.Distritos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Docentes" EntityType="Self.Docentes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Encargados" EntityType="Self.Encargados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especialidades" EntityType="Self.Especialidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materias" EntityType="Self.Materias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Matriculas" EntityType="Self.Matriculas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipios" EntityType="Self.Municipios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Opciones" EntityType="Self.Opciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turnos" EntityType="Self.Turnos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Asignacio__ID_Op__5535A963" Association="Self.FK__Asignacio__ID_Op__5535A963">
+            <End Role="Opciones" EntitySet="Opciones" />
+            <End Role="AsignacionRolesOpciones" EntitySet="AsignacionRolesOpciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Asignacio__ID_Ro__5441852A" Association="Self.FK__Asignacio__ID_Ro__5441852A">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="AsignacionRolesOpciones" EntitySet="AsignacionRolesOpciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Calificac__ID_Do__72C60C4A" Association="Self.FK__Calificac__ID_Do__72C60C4A">
+            <End Role="Docentes" EntitySet="Docentes" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Calificac__ID_Ma__70DDC3D8" Association="Self.FK__Calificac__ID_Ma__70DDC3D8">
+            <End Role="Materias" EntitySet="Materias" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Calificacio__NIE__71D1E811" Association="Self.FK__Calificacio__NIE__71D1E811">
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Departame__ID_Pa__398D8EEE" Association="Self.FK__Departame__ID_Pa__398D8EEE">
+            <End Role="Paises" EntitySet="Paises" />
+            <End Role="Departamentos" EntitySet="Departamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__ID_Di__4222D4EF" Association="Self.FK__Direccion__ID_Di__4222D4EF">
+            <End Role="Distritos" EntitySet="Distritos" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Distritos__ID_Mu__3F466844" Association="Self.FK__Distritos__ID_Mu__3F466844">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Distritos" EntitySet="Distritos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Docentes__ID_Emp__4CA06362" Association="Self.FK__Docentes__ID_Emp__4CA06362">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Docentes" EntitySet="Docentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Docentes__ID_Esp__4D94879B" Association="Self.FK__Docentes__ID_Esp__4D94879B">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="Docentes" EntitySet="Docentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleados__ID_Ca__46E78A0C" Association="Self.FK__Empleados__ID_Ca__46E78A0C">
+            <End Role="Cargos" EntitySet="Cargos" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleados__ID_Di__47DBAE45" Association="Self.FK__Empleados__ID_Di__47DBAE45">
+            <End Role="Direcciones" EntitySet="Direcciones" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Encargado__ID_Di__6477ECF3" Association="Self.FK__Encargado__ID_Di__6477ECF3">
+            <End Role="Direcciones" EntitySet="Direcciones" />
+            <End Role="Encargados" EntitySet="Encargados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estudiant__ID_Di__68487DD7" Association="Self.FK__Estudiant__ID_Di__68487DD7">
+            <End Role="Direcciones" EntitySet="Direcciones" />
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estudiant__ID_En__6754599E" Association="Self.FK__Estudiant__ID_En__6754599E">
+            <End Role="Encargados" EntitySet="Encargados" />
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Grupos__ID_Aula__60A75C0F" Association="Self.FK__Grupos__ID_Aula__60A75C0F">
+            <End Role="Aulas" EntitySet="Aulas" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Grupos__ID_Docen__619B8048" Association="Self.FK__Grupos__ID_Docen__619B8048">
+            <End Role="Docentes" EntitySet="Docentes" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Grupos__ID_Turno__5FB337D6" Association="Self.FK__Grupos__ID_Turno__5FB337D6">
+            <End Role="Turnos" EntitySet="Turnos" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matricula__ID_Gr__6C190EBB" Association="Self.FK__Matricula__ID_Gr__6C190EBB">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="Matriculas" EntitySet="Matriculas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matriculas__NIE__6B24EA82" Association="Self.FK__Matriculas__NIE__6B24EA82">
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+            <End Role="Matriculas" EntitySet="Matriculas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Municipio__ID_De__3C69FB99" Association="Self.FK__Municipio__ID_De__3C69FB99">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Municipios" EntitySet="Municipios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuarios__ID_Emp__5812160E" Association="Self.FK__Usuarios__ID_Emp__5812160E">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuarios__ID_Rol__59063A47" Association="Self.FK__Usuarios__ID_Rol__59063A47">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="escuela_ds2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AsignacionRolesOpciones">
+          <Key>
+            <PropertyRef Name="ID_AsignacionRol" />
+          </Key>
+          <Property Name="ID_AsignacionRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Rol" Type="Int32" Nullable="false" />
+          <Property Name="ID_Opcion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Opciones" Relationship="Self.FK__Asignacio__ID_Op__5535A963" FromRole="AsignacionRolesOpciones" ToRole="Opciones" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK__Asignacio__ID_Ro__5441852A" FromRole="AsignacionRolesOpciones" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="Aulas">
+          <Key>
+            <PropertyRef Name="ID_Aula" />
+          </Key>
+          <Property Name="ID_Aula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Edificio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Piso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroAula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Grupos" Relationship="Self.FK__Grupos__ID_Aula__60A75C0F" FromRole="Aulas" ToRole="Grupos" />
+        </EntityType>
+        <EntityType Name="Calificaciones">
+          <Key>
+            <PropertyRef Name="ID_Calificacion" />
+          </Key>
+          <Property Name="ID_Calificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Materia" Type="Int32" Nullable="false" />
+          <Property Name="NIE" Type="Int32" Nullable="false" />
+          <Property Name="ID_Docente" Type="Int32" Nullable="false" />
+          <Property Name="Examen1" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Examen2" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Examen3" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="ExamenFinal" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Tareas" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Promedio" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Docentes" Relationship="Self.FK__Calificac__ID_Do__72C60C4A" FromRole="Calificaciones" ToRole="Docentes" />
+          <NavigationProperty Name="Materias" Relationship="Self.FK__Calificac__ID_Ma__70DDC3D8" FromRole="Calificaciones" ToRole="Materias" />
+          <NavigationProperty Name="Estudiantes" Relationship="Self.FK__Calificacio__NIE__71D1E811" FromRole="Calificaciones" ToRole="Estudiantes" />
+        </EntityType>
+        <EntityType Name="Cargos">
+          <Key>
+            <PropertyRef Name="ID_Cargo" />
+          </Key>
+          <Property Name="ID_Cargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cargo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__ID_Ca__46E78A0C" FromRole="Cargos" ToRole="Empleados" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="ID_Departamento" />
+          </Key>
+          <Property Name="ID_Departamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Departamento" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Pais" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Paises" Relationship="Self.FK__Departame__ID_Pa__398D8EEE" FromRole="Departamentos" ToRole="Paises" />
+          <NavigationProperty Name="Municipios" Relationship="Self.FK__Municipio__ID_De__3C69FB99" FromRole="Departamentos" ToRole="Municipios" />
+        </EntityType>
+        <EntityType Name="Direcciones">
+          <Key>
+            <PropertyRef Name="ID_Direccion" />
+          </Key>
+          <Property Name="ID_Direccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Linea1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Linea2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Distrito" Type="Int32" Nullable="false" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Distritos" Relationship="Self.FK__Direccion__ID_Di__4222D4EF" FromRole="Direcciones" ToRole="Distritos" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__ID_Di__47DBAE45" FromRole="Direcciones" ToRole="Empleados" />
+          <NavigationProperty Name="Encargados" Relationship="Self.FK__Encargado__ID_Di__6477ECF3" FromRole="Direcciones" ToRole="Encargados" />
+          <NavigationProperty Name="Estudiantes" Relationship="Self.FK__Estudiant__ID_Di__68487DD7" FromRole="Direcciones" ToRole="Estudiantes" />
+        </EntityType>
+        <EntityType Name="Distritos">
+          <Key>
+            <PropertyRef Name="ID_Distrito" />
+          </Key>
+          <Property Name="ID_Distrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Distrito" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Municipio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Direcciones" Relationship="Self.FK__Direccion__ID_Di__4222D4EF" FromRole="Distritos" ToRole="Direcciones" />
+          <NavigationProperty Name="Municipios" Relationship="Self.FK__Distritos__ID_Mu__3F466844" FromRole="Distritos" ToRole="Municipios" />
+        </EntityType>
+        <EntityType Name="Docentes">
+          <Key>
+            <PropertyRef Name="ID_Docente" />
+          </Key>
+          <Property Name="ID_Docente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Empleado" Type="Int32" Nullable="false" />
+          <Property Name="ID_Especialidad" Type="Int32" Nullable="false" />
+          <Property Name="Escalafon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Calificaciones" Relationship="Self.FK__Calificac__ID_Do__72C60C4A" FromRole="Docentes" ToRole="Calificaciones" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Docentes__ID_Emp__4CA06362" FromRole="Docentes" ToRole="Empleados" />
+          <NavigationProperty Name="Especialidades" Relationship="Self.FK__Docentes__ID_Esp__4D94879B" FromRole="Docentes" ToRole="Especialidades" />
+          <NavigationProperty Name="Grupos" Relationship="Self.FK__Grupos__ID_Docen__619B8048" FromRole="Docentes" ToRole="Grupos" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="ID_Empleado" />
+          </Key>
+          <Property Name="ID_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DUI_Empleado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ISSS_Empleado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombresEmpleado" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApellidosEmpleado" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNacEmpleado" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TelefonoEmpleado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Cargo" Type="Int32" Nullable="false" />
+          <Property Name="ID_Direccion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cargos" Relationship="Self.FK__Empleados__ID_Ca__46E78A0C" FromRole="Empleados" ToRole="Cargos" />
+          <NavigationProperty Name="Direcciones" Relationship="Self.FK__Empleados__ID_Di__47DBAE45" FromRole="Empleados" ToRole="Direcciones" />
+          <NavigationProperty Name="Docentes" Relationship="Self.FK__Docentes__ID_Emp__4CA06362" FromRole="Empleados" ToRole="Docentes" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__ID_Emp__5812160E" FromRole="Empleados" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Encargados">
+          <Key>
+            <PropertyRef Name="ID_Encargado" />
+          </Key>
+          <Property Name="ID_Encargado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombresEncargado" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApellidosEncargado" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelefonoEncargado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DUI_Encargado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Direccion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Direcciones" Relationship="Self.FK__Encargado__ID_Di__6477ECF3" FromRole="Encargados" ToRole="Direcciones" />
+          <NavigationProperty Name="Estudiantes" Relationship="Self.FK__Estudiant__ID_En__6754599E" FromRole="Encargados" ToRole="Estudiantes" />
+        </EntityType>
+        <EntityType Name="Especialidades">
+          <Key>
+            <PropertyRef Name="ID_Especialidad" />
+          </Key>
+          <Property Name="ID_Especialidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreEspecialidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Carrera" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Docentes" Relationship="Self.FK__Docentes__ID_Esp__4D94879B" FromRole="Especialidades" ToRole="Docentes" />
+        </EntityType>
+        <EntityType Name="Estudiantes">
+          <Key>
+            <PropertyRef Name="NIE" />
+          </Key>
+          <Property Name="NIE" Type="Int32" Nullable="false" />
+          <Property Name="NombresEstudiante" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApellidosEstudiante" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNacEstudiante" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GeneroEstudiante" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TelefonoEstudiante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Encargado" Type="Int32" Nullable="false" />
+          <Property Name="ID_Direccion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Calificaciones" Relationship="Self.FK__Calificacio__NIE__71D1E811" FromRole="Estudiantes" ToRole="Calificaciones" />
+          <NavigationProperty Name="Direcciones" Relationship="Self.FK__Estudiant__ID_Di__68487DD7" FromRole="Estudiantes" ToRole="Direcciones" />
+          <NavigationProperty Name="Encargados" Relationship="Self.FK__Estudiant__ID_En__6754599E" FromRole="Estudiantes" ToRole="Encargados" />
+          <NavigationProperty Name="Matriculas" Relationship="Self.FK__Matriculas__NIE__6B24EA82" FromRole="Estudiantes" ToRole="Matriculas" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="ID_Grupo" />
+          </Key>
+          <Property Name="ID_Grupo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Grado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Seccion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="ID_Turno" Type="Int32" Nullable="false" />
+          <Property Name="ID_Aula" Type="Int32" Nullable="false" />
+          <Property Name="ID_Docente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Aulas" Relationship="Self.FK__Grupos__ID_Aula__60A75C0F" FromRole="Grupos" ToRole="Aulas" />
+          <NavigationProperty Name="Docentes" Relationship="Self.FK__Grupos__ID_Docen__619B8048" FromRole="Grupos" ToRole="Docentes" />
+          <NavigationProperty Name="Turnos" Relationship="Self.FK__Grupos__ID_Turno__5FB337D6" FromRole="Grupos" ToRole="Turnos" />
+          <NavigationProperty Name="Matriculas" Relationship="Self.FK__Matricula__ID_Gr__6C190EBB" FromRole="Grupos" ToRole="Matriculas" />
+        </EntityType>
+        <EntityType Name="Materias">
+          <Key>
+            <PropertyRef Name="ID_Materia" />
+          </Key>
+          <Property Name="ID_Materia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreMateria" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Calificaciones" Relationship="Self.FK__Calificac__ID_Ma__70DDC3D8" FromRole="Materias" ToRole="Calificaciones" />
+        </EntityType>
+        <EntityType Name="Matriculas">
+          <Key>
+            <PropertyRef Name="ID_Matricula" />
+          </Key>
+          <Property Name="ID_Matricula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NIE" Type="Int32" Nullable="false" />
+          <Property Name="ID_Grupo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Estudiantes" Relationship="Self.FK__Matriculas__NIE__6B24EA82" FromRole="Matriculas" ToRole="Estudiantes" />
+          <NavigationProperty Name="Grupos" Relationship="Self.FK__Matricula__ID_Gr__6C190EBB" FromRole="Matriculas" ToRole="Grupos" />
+        </EntityType>
+        <EntityType Name="Municipios">
+          <Key>
+            <PropertyRef Name="ID_Municipio" />
+          </Key>
+          <Property Name="ID_Municipio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Municipio" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Departamento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Municipio__ID_De__3C69FB99" FromRole="Municipios" ToRole="Departamentos" />
+          <NavigationProperty Name="Distritos" Relationship="Self.FK__Distritos__ID_Mu__3F466844" FromRole="Municipios" ToRole="Distritos" />
+        </EntityType>
+        <EntityType Name="Opciones">
+          <Key>
+            <PropertyRef Name="ID_Opcion" />
+          </Key>
+          <Property Name="ID_Opcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreOpcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AsignacionRolesOpciones" Relationship="Self.FK__Asignacio__ID_Op__5535A963" FromRole="Opciones" ToRole="AsignacionRolesOpciones" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="ID_Pais" />
+          </Key>
+          <Property Name="ID_Pais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pais" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Departame__ID_Pa__398D8EEE" FromRole="Paises" ToRole="Departamentos" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="ID_Rol" />
+          </Key>
+          <Property Name="ID_Rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreRol" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AsignacionRolesOpciones" Relationship="Self.FK__Asignacio__ID_Ro__5441852A" FromRole="Roles" ToRole="AsignacionRolesOpciones" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__ID_Rol__59063A47" FromRole="Roles" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Turnos">
+          <Key>
+            <PropertyRef Name="ID_Turno" />
+          </Key>
+          <Property Name="ID_Turno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Turno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Grupos" Relationship="Self.FK__Grupos__ID_Turno__5FB337D6" FromRole="Turnos" ToRole="Grupos" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="ID_Usuario" />
+          </Key>
+          <Property Name="ID_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Empleado" Type="Int32" Nullable="false" />
+          <Property Name="ID_Rol" Type="Int32" Nullable="false" />
+          <Property Name="Usuario" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Clave" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Usuarios__ID_Emp__5812160E" FromRole="Usuarios" ToRole="Empleados" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK__Usuarios__ID_Rol__59063A47" FromRole="Usuarios" ToRole="Roles" />
+        </EntityType>
+        <Association Name="FK__Asignacio__ID_Op__5535A963">
+          <End Role="Opciones" Type="Self.Opciones" Multiplicity="1" />
+          <End Role="AsignacionRolesOpciones" Type="Self.AsignacionRolesOpciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opciones">
+              <PropertyRef Name="ID_Opcion" />
+            </Principal>
+            <Dependent Role="AsignacionRolesOpciones">
+              <PropertyRef Name="ID_Opcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Asignacio__ID_Ro__5441852A">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="AsignacionRolesOpciones" Type="Self.AsignacionRolesOpciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="ID_Rol" />
+            </Principal>
+            <Dependent Role="AsignacionRolesOpciones">
+              <PropertyRef Name="ID_Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Grupos__ID_Aula__60A75C0F">
+          <End Role="Aulas" Type="Self.Aulas" Multiplicity="1" />
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aulas">
+              <PropertyRef Name="ID_Aula" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="ID_Aula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Calificac__ID_Do__72C60C4A">
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docentes">
+              <PropertyRef Name="ID_Docente" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="ID_Docente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Calificac__ID_Ma__70DDC3D8">
+          <End Role="Materias" Type="Self.Materias" Multiplicity="1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materias">
+              <PropertyRef Name="ID_Materia" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="ID_Materia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Calificacio__NIE__71D1E811">
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="1" />
+          <End Role="Calificaciones" Type="Self.Calificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiantes">
+              <PropertyRef Name="NIE" />
+            </Principal>
+            <Dependent Role="Calificaciones">
+              <PropertyRef Name="NIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleados__ID_Ca__46E78A0C">
+          <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargos">
+              <PropertyRef Name="ID_Cargo" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="ID_Cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Departame__ID_Pa__398D8EEE">
+          <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paises">
+              <PropertyRef Name="ID_Pais" />
+            </Principal>
+            <Dependent Role="Departamentos">
+              <PropertyRef Name="ID_Pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Municipio__ID_De__3C69FB99">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="ID_Departamento" />
+            </Principal>
+            <Dependent Role="Municipios">
+              <PropertyRef Name="ID_Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__ID_Di__4222D4EF">
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="1" />
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distritos">
+              <PropertyRef Name="ID_Distrito" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="ID_Distrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleados__ID_Di__47DBAE45">
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direcciones">
+              <PropertyRef Name="ID_Direccion" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="ID_Direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Encargado__ID_Di__6477ECF3">
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="1" />
+          <End Role="Encargados" Type="Self.Encargados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direcciones">
+              <PropertyRef Name="ID_Direccion" />
+            </Principal>
+            <Dependent Role="Encargados">
+              <PropertyRef Name="ID_Direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estudiant__ID_Di__68487DD7">
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="1" />
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direcciones">
+              <PropertyRef Name="ID_Direccion" />
+            </Principal>
+            <Dependent Role="Estudiantes">
+              <PropertyRef Name="ID_Direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Distritos__ID_Mu__3F466844">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="ID_Municipio" />
+            </Principal>
+            <Dependent Role="Distritos">
+              <PropertyRef Name="ID_Municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Docentes__ID_Emp__4CA06362">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="ID_Empleado" />
+            </Principal>
+            <Dependent Role="Docentes">
+              <PropertyRef Name="ID_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Docentes__ID_Esp__4D94879B">
+          <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="1" />
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="ID_Especialidad" />
+            </Principal>
+            <Dependent Role="Docentes">
+              <PropertyRef Name="ID_Especialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Grupos__ID_Docen__619B8048">
+          <End Role="Docentes" Type="Self.Docentes" Multiplicity="1" />
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Docentes">
+              <PropertyRef Name="ID_Docente" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="ID_Docente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuarios__ID_Emp__5812160E">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="ID_Empleado" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="ID_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estudiant__ID_En__6754599E">
+          <End Role="Encargados" Type="Self.Encargados" Multiplicity="1" />
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encargados">
+              <PropertyRef Name="ID_Encargado" />
+            </Principal>
+            <Dependent Role="Estudiantes">
+              <PropertyRef Name="ID_Encargado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matriculas__NIE__6B24EA82">
+          <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="1" />
+          <End Role="Matriculas" Type="Self.Matriculas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiantes">
+              <PropertyRef Name="NIE" />
+            </Principal>
+            <Dependent Role="Matriculas">
+              <PropertyRef Name="NIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Grupos__ID_Turno__5FB337D6">
+          <End Role="Turnos" Type="Self.Turnos" Multiplicity="1" />
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnos">
+              <PropertyRef Name="ID_Turno" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="ID_Turno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matricula__ID_Gr__6C190EBB">
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="1" />
+          <End Role="Matriculas" Type="Self.Matriculas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupos">
+              <PropertyRef Name="ID_Grupo" />
+            </Principal>
+            <Dependent Role="Matriculas">
+              <PropertyRef Name="ID_Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuarios__ID_Rol__59063A47">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="ID_Rol" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="ID_Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EscuelaDBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AsignacionRolesOpciones" EntityType="Self.AsignacionRolesOpciones" />
+          <EntitySet Name="Aulas" EntityType="Self.Aulas" />
+          <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" />
+          <EntitySet Name="Cargos" EntityType="Self.Cargos" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" />
+          <EntitySet Name="Direcciones" EntityType="Self.Direcciones" />
+          <EntitySet Name="Distritos" EntityType="Self.Distritos" />
+          <EntitySet Name="Docentes" EntityType="Self.Docentes" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Encargados" EntityType="Self.Encargados" />
+          <EntitySet Name="Especialidades" EntityType="Self.Especialidades" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" />
+          <EntitySet Name="Materias" EntityType="Self.Materias" />
+          <EntitySet Name="Matriculas" EntityType="Self.Matriculas" />
+          <EntitySet Name="Municipios" EntityType="Self.Municipios" />
+          <EntitySet Name="Opciones" EntityType="Self.Opciones" />
+          <EntitySet Name="Paises" EntityType="Self.Paises" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Turnos" EntityType="Self.Turnos" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK__Asignacio__ID_Op__5535A963" Association="Self.FK__Asignacio__ID_Op__5535A963">
+            <End Role="Opciones" EntitySet="Opciones" />
+            <End Role="AsignacionRolesOpciones" EntitySet="AsignacionRolesOpciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Asignacio__ID_Ro__5441852A" Association="Self.FK__Asignacio__ID_Ro__5441852A">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="AsignacionRolesOpciones" EntitySet="AsignacionRolesOpciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Grupos__ID_Aula__60A75C0F" Association="Self.FK__Grupos__ID_Aula__60A75C0F">
+            <End Role="Aulas" EntitySet="Aulas" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Calificac__ID_Do__72C60C4A" Association="Self.FK__Calificac__ID_Do__72C60C4A">
+            <End Role="Docentes" EntitySet="Docentes" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Calificac__ID_Ma__70DDC3D8" Association="Self.FK__Calificac__ID_Ma__70DDC3D8">
+            <End Role="Materias" EntitySet="Materias" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Calificacio__NIE__71D1E811" Association="Self.FK__Calificacio__NIE__71D1E811">
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+            <End Role="Calificaciones" EntitySet="Calificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleados__ID_Ca__46E78A0C" Association="Self.FK__Empleados__ID_Ca__46E78A0C">
+            <End Role="Cargos" EntitySet="Cargos" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Departame__ID_Pa__398D8EEE" Association="Self.FK__Departame__ID_Pa__398D8EEE">
+            <End Role="Paises" EntitySet="Paises" />
+            <End Role="Departamentos" EntitySet="Departamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Municipio__ID_De__3C69FB99" Association="Self.FK__Municipio__ID_De__3C69FB99">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Municipios" EntitySet="Municipios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__ID_Di__4222D4EF" Association="Self.FK__Direccion__ID_Di__4222D4EF">
+            <End Role="Distritos" EntitySet="Distritos" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleados__ID_Di__47DBAE45" Association="Self.FK__Empleados__ID_Di__47DBAE45">
+            <End Role="Direcciones" EntitySet="Direcciones" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Encargado__ID_Di__6477ECF3" Association="Self.FK__Encargado__ID_Di__6477ECF3">
+            <End Role="Direcciones" EntitySet="Direcciones" />
+            <End Role="Encargados" EntitySet="Encargados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estudiant__ID_Di__68487DD7" Association="Self.FK__Estudiant__ID_Di__68487DD7">
+            <End Role="Direcciones" EntitySet="Direcciones" />
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Distritos__ID_Mu__3F466844" Association="Self.FK__Distritos__ID_Mu__3F466844">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Distritos" EntitySet="Distritos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Docentes__ID_Emp__4CA06362" Association="Self.FK__Docentes__ID_Emp__4CA06362">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Docentes" EntitySet="Docentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Docentes__ID_Esp__4D94879B" Association="Self.FK__Docentes__ID_Esp__4D94879B">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="Docentes" EntitySet="Docentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Grupos__ID_Docen__619B8048" Association="Self.FK__Grupos__ID_Docen__619B8048">
+            <End Role="Docentes" EntitySet="Docentes" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuarios__ID_Emp__5812160E" Association="Self.FK__Usuarios__ID_Emp__5812160E">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estudiant__ID_En__6754599E" Association="Self.FK__Estudiant__ID_En__6754599E">
+            <End Role="Encargados" EntitySet="Encargados" />
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matriculas__NIE__6B24EA82" Association="Self.FK__Matriculas__NIE__6B24EA82">
+            <End Role="Estudiantes" EntitySet="Estudiantes" />
+            <End Role="Matriculas" EntitySet="Matriculas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Grupos__ID_Turno__5FB337D6" Association="Self.FK__Grupos__ID_Turno__5FB337D6">
+            <End Role="Turnos" EntitySet="Turnos" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matricula__ID_Gr__6C190EBB" Association="Self.FK__Matricula__ID_Gr__6C190EBB">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="Matriculas" EntitySet="Matriculas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuarios__ID_Rol__59063A47" Association="Self.FK__Usuarios__ID_Rol__59063A47">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="escuela_ds2ModelStoreContainer" CdmEntityContainer="EscuelaDBContext">
+          <EntitySetMapping Name="AsignacionRolesOpciones">
+            <EntityTypeMapping TypeName="escuela_ds2Model.AsignacionRolesOpciones">
+              <MappingFragment StoreEntitySet="AsignacionRolesOpciones">
+                <ScalarProperty Name="ID_AsignacionRol" ColumnName="ID_AsignacionRol" />
+                <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
+                <ScalarProperty Name="ID_Opcion" ColumnName="ID_Opcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aulas">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Aulas">
+              <MappingFragment StoreEntitySet="Aulas">
+                <ScalarProperty Name="ID_Aula" ColumnName="ID_Aula" />
+                <ScalarProperty Name="Edificio" ColumnName="Edificio" />
+                <ScalarProperty Name="Piso" ColumnName="Piso" />
+                <ScalarProperty Name="NumeroAula" ColumnName="NumeroAula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calificaciones">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Calificaciones">
+              <MappingFragment StoreEntitySet="Calificaciones">
+                <ScalarProperty Name="ID_Calificacion" ColumnName="ID_Calificacion" />
+                <ScalarProperty Name="ID_Materia" ColumnName="ID_Materia" />
+                <ScalarProperty Name="NIE" ColumnName="NIE" />
+                <ScalarProperty Name="ID_Docente" ColumnName="ID_Docente" />
+                <ScalarProperty Name="Examen1" ColumnName="Examen1" />
+                <ScalarProperty Name="Examen2" ColumnName="Examen2" />
+                <ScalarProperty Name="Examen3" ColumnName="Examen3" />
+                <ScalarProperty Name="ExamenFinal" ColumnName="ExamenFinal" />
+                <ScalarProperty Name="Tareas" ColumnName="Tareas" />
+                <ScalarProperty Name="Promedio" ColumnName="Promedio" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cargos">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Cargos">
+              <MappingFragment StoreEntitySet="Cargos">
+                <ScalarProperty Name="ID_Cargo" ColumnName="ID_Cargo" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentos">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Departamentos">
+              <MappingFragment StoreEntitySet="Departamentos">
+                <ScalarProperty Name="ID_Departamento" ColumnName="ID_Departamento" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="ID_Pais" ColumnName="ID_Pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direcciones">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Direcciones">
+              <MappingFragment StoreEntitySet="Direcciones">
+                <ScalarProperty Name="ID_Direccion" ColumnName="ID_Direccion" />
+                <ScalarProperty Name="Linea1" ColumnName="Linea1" />
+                <ScalarProperty Name="Linea2" ColumnName="Linea2" />
+                <ScalarProperty Name="ID_Distrito" ColumnName="ID_Distrito" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distritos">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Distritos">
+              <MappingFragment StoreEntitySet="Distritos">
+                <ScalarProperty Name="ID_Distrito" ColumnName="ID_Distrito" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+                <ScalarProperty Name="ID_Municipio" ColumnName="ID_Municipio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Docentes">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Docentes">
+              <MappingFragment StoreEntitySet="Docentes">
+                <ScalarProperty Name="ID_Docente" ColumnName="ID_Docente" />
+                <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+                <ScalarProperty Name="ID_Especialidad" ColumnName="ID_Especialidad" />
+                <ScalarProperty Name="Escalafon" ColumnName="Escalafon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+                <ScalarProperty Name="DUI_Empleado" ColumnName="DUI_Empleado" />
+                <ScalarProperty Name="ISSS_Empleado" ColumnName="ISSS_Empleado" />
+                <ScalarProperty Name="NombresEmpleado" ColumnName="NombresEmpleado" />
+                <ScalarProperty Name="ApellidosEmpleado" ColumnName="ApellidosEmpleado" />
+                <ScalarProperty Name="FechaNacEmpleado" ColumnName="FechaNacEmpleado" />
+                <ScalarProperty Name="TelefonoEmpleado" ColumnName="TelefonoEmpleado" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="ID_Cargo" ColumnName="ID_Cargo" />
+                <ScalarProperty Name="ID_Direccion" ColumnName="ID_Direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Encargados">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Encargados">
+              <MappingFragment StoreEntitySet="Encargados">
+                <ScalarProperty Name="ID_Encargado" ColumnName="ID_Encargado" />
+                <ScalarProperty Name="NombresEncargado" ColumnName="NombresEncargado" />
+                <ScalarProperty Name="ApellidosEncargado" ColumnName="ApellidosEncargado" />
+                <ScalarProperty Name="TelefonoEncargado" ColumnName="TelefonoEncargado" />
+                <ScalarProperty Name="DUI_Encargado" ColumnName="DUI_Encargado" />
+                <ScalarProperty Name="ID_Direccion" ColumnName="ID_Direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especialidades">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Especialidades">
+              <MappingFragment StoreEntitySet="Especialidades">
+                <ScalarProperty Name="ID_Especialidad" ColumnName="ID_Especialidad" />
+                <ScalarProperty Name="NombreEspecialidad" ColumnName="NombreEspecialidad" />
+                <ScalarProperty Name="Carrera" ColumnName="Carrera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estudiantes">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Estudiantes">
+              <MappingFragment StoreEntitySet="Estudiantes">
+                <ScalarProperty Name="NIE" ColumnName="NIE" />
+                <ScalarProperty Name="NombresEstudiante" ColumnName="NombresEstudiante" />
+                <ScalarProperty Name="ApellidosEstudiante" ColumnName="ApellidosEstudiante" />
+                <ScalarProperty Name="FechaNacEstudiante" ColumnName="FechaNacEstudiante" />
+                <ScalarProperty Name="GeneroEstudiante" ColumnName="GeneroEstudiante" />
+                <ScalarProperty Name="TelefonoEstudiante" ColumnName="TelefonoEstudiante" />
+                <ScalarProperty Name="ID_Encargado" ColumnName="ID_Encargado" />
+                <ScalarProperty Name="ID_Direccion" ColumnName="ID_Direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupos">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Grupos">
+              <MappingFragment StoreEntitySet="Grupos">
+                <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+                <ScalarProperty Name="Grado" ColumnName="Grado" />
+                <ScalarProperty Name="Seccion" ColumnName="Seccion" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="ID_Turno" ColumnName="ID_Turno" />
+                <ScalarProperty Name="ID_Aula" ColumnName="ID_Aula" />
+                <ScalarProperty Name="ID_Docente" ColumnName="ID_Docente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materias">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Materias">
+              <MappingFragment StoreEntitySet="Materias">
+                <ScalarProperty Name="ID_Materia" ColumnName="ID_Materia" />
+                <ScalarProperty Name="NombreMateria" ColumnName="NombreMateria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matriculas">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Matriculas">
+              <MappingFragment StoreEntitySet="Matriculas">
+                <ScalarProperty Name="ID_Matricula" ColumnName="ID_Matricula" />
+                <ScalarProperty Name="NIE" ColumnName="NIE" />
+                <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Municipios">
+              <MappingFragment StoreEntitySet="Municipios">
+                <ScalarProperty Name="ID_Municipio" ColumnName="ID_Municipio" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="ID_Departamento" ColumnName="ID_Departamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opciones">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Opciones">
+              <MappingFragment StoreEntitySet="Opciones">
+                <ScalarProperty Name="ID_Opcion" ColumnName="ID_Opcion" />
+                <ScalarProperty Name="NombreOpcion" ColumnName="NombreOpcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paises">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Paises">
+              <MappingFragment StoreEntitySet="Paises">
+                <ScalarProperty Name="ID_Pais" ColumnName="ID_Pais" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
+                <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turnos">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Turnos">
+              <MappingFragment StoreEntitySet="Turnos">
+                <ScalarProperty Name="ID_Turno" ColumnName="ID_Turno" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="escuela_ds2Model.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+                <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
