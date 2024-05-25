@@ -1,4 +1,5 @@
 ﻿using EscuelaDS.CLS.Dtos;
+using EscuelaDS.CLS.Rector;
 using EscuelaDS.CLS.Secretaria;
 using EscuelaDS.DataLayer;
 using EscuelaDS.GUI.Admnistracion;
@@ -57,7 +58,13 @@ namespace EscuelaDS
                 node = new TreeNode(grupo.Detalle);
                 node.Tag = grupo.Id;
 
+                var nodeProfesor = new TreeNode(grupo.Profesor.Detalle);
+                nodeProfesor.Tag = grupo.Profesor.Id;  
+
                 tvGrupos.Nodes[0].Nodes.Add(node);
+
+                node.Nodes.Add(nodeProfesor);
+
                 node.Nodes.Add("Estudiantes");
                 node.ContextMenuStrip = cmsGrupos;
 
@@ -65,7 +72,7 @@ namespace EscuelaDS
                     var nodeEstudiante = new TreeNode(estudiante.Detalle);
                     nodeEstudiante.Tag = estudiante.Id;
 
-                    node.Nodes[0].Nodes.Add(nodeEstudiante);
+                    node.Nodes[1].Nodes.Add(nodeEstudiante);
                     nodeEstudiante.ContextMenuStrip = cmsEstudiantesC;
                 });
 
@@ -248,9 +255,31 @@ namespace EscuelaDS
             content.Show(); 
         }
 
-        private void asignarDToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void asignarDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowContent(new DetalleGrupo());
+            try
+            {
+                // validate node not null
+
+                var nodeGrupo = this.tvGrupos.SelectedNode;
+                var nodeDocente = this.tvGrupos.SelectedNode.Nodes[0];
+
+                if (nodeDocente == null) throw new Exception("Seleccione un docente");
+                if (nodeGrupo == null) throw new Exception("Seleccione un grupo");
+
+                var dto = new DocenteDto
+                {
+                    Id = Convert.ToInt32(nodeDocente.Tag),
+                    Nombre = nodeDocente.Text
+                };
+
+                var grupo = await Grupo.GetAsync(Convert.ToInt32(nodeGrupo.Tag));
+                ShowContent(new DetalleCalificaciones(dto, grupo));
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

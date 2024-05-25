@@ -52,6 +52,7 @@ namespace EscuelaDS.CLS.Secretaria
             }
             return grupos;
         } 
+         
 
         public async static Task<List<GrupoTree>> GetTreeAsync()
         {
@@ -82,6 +83,27 @@ namespace EscuelaDS.CLS.Secretaria
             return grupos;
         }
 
+        public async Task<List<EstudianteCalificadoDto>> GetEstudiantesAsync()
+        {
+            List<EstudianteCalificadoDto> estudiantes = new List<EstudianteCalificadoDto>();
+            using (var context = new EscuelaDBContext())
+            {
+                estudiantes = await context.Matriculas
+                    .Where(matricula => matricula.ID_Grupo == this.Id)
+                    .Select(matricula => matricula.Estudiantes)
+                    .Select(estudiante => new EstudianteCalificadoDto
+                    {
+                        NIE = estudiante.NIE,
+                        Nombre = estudiante.NombresEstudiante + " " + estudiante.ApellidosEstudiante,
+                        Encargado = estudiante.Encargados.NombresEncargado + " " + estudiante.Encargados.ApellidosEncargado,
+                        Estado = context.Calificaciones
+                            .Where(calificacion => calificacion.NIE == estudiante.NIE)
+                            .Select(calificacion => calificacion.Estado)
+                            .FirstOrDefault() ?? "Sin calificar"
+                    }).ToListAsync();
+            }
+            return estudiantes;
+        }
         public async static Task<Grupo> GetAsync(int id)
         {
             Grupo grupo = null;

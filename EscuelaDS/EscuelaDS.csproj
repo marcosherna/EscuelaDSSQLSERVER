@@ -70,6 +70,7 @@
     <Compile Include="CLS\Dtos\DepartamentoDto.cs" />
     <Compile Include="CLS\Dtos\DocenteDto.cs" />
     <Compile Include="CLS\Dtos\EmpleadoDto.cs" />
+    <Compile Include="CLS\Dtos\EstudianteCalificadoDto.cs" />
     <Compile Include="CLS\Dtos\EstudianteDto.cs" />
     <Compile Include="CLS\Dtos\GrupoCMBDto.cs" />
     <Compile Include="CLS\Dtos\GrupoDto.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="CLS\Rector\Docente.cs" />
     <Compile Include="CLS\Rector\Materia.cs" />
     <Compile Include="CLS\Rector\Turno.cs" />
+    <Compile Include="CLS\Secretaria\Calificacion.cs" />
     <Compile Include="CLS\Secretaria\Encargado.cs" />
     <Compile Include="CLS\Secretaria\Estudiante.cs" />
     <Compile Include="CLS\Secretaria\Grupo.cs" />
@@ -258,11 +260,23 @@
     <Compile Include="GUI\Secretariado\Encargados\EdicionEncargados.Designer.cs">
       <DependentUpon>EdicionEncargados.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\DetalleCalificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\DetalleCalificaciones.Designer.cs">
+      <DependentUpon>DetalleCalificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Secretariado\Estudiantes\EdicioEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Secretariado\Estudiantes\EdicioEstudiantes.Designer.cs">
       <DependentUpon>EdicioEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\EdicionCalificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\EdicionCalificacion.Designer.cs">
+      <DependentUpon>EdicionCalificacion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.cs">
       <SubType>Form</SubType>
@@ -335,8 +349,14 @@
     <EmbeddedResource Include="GUI\Secretariado\Encargados\EdicionEncargados.resx">
       <DependentUpon>EdicionEncargados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Estudiantes\DetalleCalificaciones.resx">
+      <DependentUpon>DetalleCalificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Estudiantes\EdicioEstudiantes.resx">
       <DependentUpon>EdicioEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Estudiantes\EdicionCalificacion.resx">
+      <DependentUpon>EdicionCalificacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.resx">
       <DependentUpon>GestionEstudiantes.cs</DependentUpon>
