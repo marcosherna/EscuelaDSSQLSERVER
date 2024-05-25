@@ -105,8 +105,10 @@ namespace EscuelaDS
 
         private void gestionEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionEmpleado gestionEmpleado = new GestionEmpleado();
-            gestionEmpleado.ShowDialog();
+            //GestionEmpleado gestionEmpleado = new GestionEmpleado();
+            //gestionEmpleado.ShowDialog();
+
+            ShowContent(new GestionEmpleado());
         }
 
         private void gestionEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -135,14 +137,17 @@ namespace EscuelaDS
 
         private void gestionDeDocentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionDocentes gestionDocentes = new GestionDocentes();
-            gestionDocentes.ShowDialog();
+            //GestionDocentes gestionDocentes = new GestionDocentes();
+            //gestionDocentes.ShowDialog();
+
+            ShowContent(new GestionDocentes());
         }
 
         private void gestionDeEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionEstudiantes gestionEstudiantes = new GestionEstudiantes();   
-            gestionEstudiantes.ShowDialog();
+            //GestionEstudiantes gestionEstudiantes = new GestionEstudiantes();   
+            //gestionEstudiantes.ShowDialog();
+            ShowContent(new GestionEstudiantes());
         }
 
         private void gestionDeGruposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -229,6 +234,23 @@ namespace EscuelaDS
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+        private Form activeForm = null;
+        private void ShowContent(Form content)
+        {
+            activeForm = content;
+            content.TopLevel = false;
+            content.FormBorderStyle = FormBorderStyle.None;
+            content.Dock = DockStyle.Fill;
+            ContentLayout.Controls.Add(content);
+            ContentLayout.Tag = content;
+            content.BringToFront();
+            content.Show(); 
+        }
+
+        private void asignarDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowContent(new DetalleGrupo());
         }
     }
 }

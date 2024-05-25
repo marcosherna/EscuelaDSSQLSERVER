@@ -53,6 +53,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tvGrupos = new System.Windows.Forms.TreeView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
@@ -61,7 +62,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.tvGrupos = new System.Windows.Forms.TreeView();
             this.cmsGrupos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.matricularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,10 +70,12 @@
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boletaDeCalificaionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContentLayout = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.cmsGrupos.SuspendLayout();
@@ -89,7 +91,7 @@
             this.rectoriaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1302, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(903, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -227,7 +229,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1302, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(903, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -265,9 +267,26 @@
             this.splitContainer1.Panel1.Controls.Add(this.tvGrupos);
             this.splitContainer1.Panel1.Controls.Add(this.toolStrip2);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.splitContainer1.Size = new System.Drawing.Size(1302, 401);
-            this.splitContainer1.SplitterDistance = 310;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.ContentLayout);
+            this.splitContainer1.Size = new System.Drawing.Size(903, 401);
+            this.splitContainer1.SplitterDistance = 215;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // tvGrupos
+            // 
+            this.tvGrupos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tvGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvGrupos.Location = new System.Drawing.Point(10, 25);
+            this.tvGrupos.Name = "tvGrupos";
+            treeNode2.Name = "Nodo0";
+            treeNode2.Text = "Grupos";
+            this.tvGrupos.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.tvGrupos.Size = new System.Drawing.Size(195, 366);
+            this.tvGrupos.TabIndex = 1;
             // 
             // toolStrip2
             // 
@@ -282,7 +301,7 @@
             this.toolStripSeparator5});
             this.toolStrip2.Location = new System.Drawing.Point(10, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(290, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(195, 25);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "Nuevo";
             // 
@@ -313,7 +332,7 @@
             this.tsbRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("tsbRefrescar.Image")));
             this.tsbRefrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRefrescar.Name = "tsbRefrescar";
-            this.tsbRefrescar.Size = new System.Drawing.Size(59, 22);
+            this.tsbRefrescar.Size = new System.Drawing.Size(59, 19);
             this.tsbRefrescar.Text = "Refrescar";
             this.tsbRefrescar.Click += new System.EventHandler(this.tsbRefrescar_Click);
             // 
@@ -330,7 +349,7 @@
             this.tsNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsNuevo.Image")));
             this.tsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsNuevo.Name = "tsNuevo";
-            this.tsNuevo.Size = new System.Drawing.Size(46, 22);
+            this.tsNuevo.Size = new System.Drawing.Size(46, 19);
             this.tsNuevo.Text = "Nuevo";
             this.tsNuevo.Click += new System.EventHandler(this.tsNuevo_Click);
             // 
@@ -340,19 +359,6 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // tvGrupos
-            // 
-            this.tvGrupos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tvGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvGrupos.Location = new System.Drawing.Point(10, 25);
-            this.tvGrupos.Name = "tvGrupos";
-            treeNode2.Name = "Nodo0";
-            treeNode2.Text = "Grupos";
-            this.tvGrupos.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.tvGrupos.Size = new System.Drawing.Size(290, 366);
-            this.tvGrupos.TabIndex = 1;
-            // 
             // cmsGrupos
             // 
             this.cmsGrupos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -360,7 +366,7 @@
             this.asignarDToolStripMenuItem,
             this.opToolStripMenuItem});
             this.cmsGrupos.Name = "cmsGrupos";
-            this.cmsGrupos.Size = new System.Drawing.Size(162, 70);
+            this.cmsGrupos.Size = new System.Drawing.Size(181, 92);
             // 
             // matricularToolStripMenuItem
             // 
@@ -372,8 +378,9 @@
             // asignarDToolStripMenuItem
             // 
             this.asignarDToolStripMenuItem.Name = "asignarDToolStripMenuItem";
-            this.asignarDToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.asignarDToolStripMenuItem.Text = "Asignar Docente";
+            this.asignarDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarDToolStripMenuItem.Text = "Detalle";
+            this.asignarDToolStripMenuItem.Click += new System.EventHandler(this.asignarDToolStripMenuItem_Click);
             // 
             // opToolStripMenuItem
             // 
@@ -389,7 +396,7 @@
             this.boletaDeCalificaionesToolStripMenuItem,
             this.quitarToolStripMenuItem});
             this.cmsEstudiantesC.Name = "cmsEstudiantesC";
-            this.cmsEstudiantesC.Size = new System.Drawing.Size(194, 92);
+            this.cmsEstudiantesC.Size = new System.Drawing.Size(194, 70);
             // 
             // calificacionesToolStripMenuItem
             // 
@@ -410,11 +417,19 @@
             this.quitarToolStripMenuItem.Text = "Quitar";
             this.quitarToolStripMenuItem.Click += new System.EventHandler(this.quitarToolStripMenuItem_Click);
             // 
+            // ContentLayout
+            // 
+            this.ContentLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentLayout.Location = new System.Drawing.Point(0, 0);
+            this.ContentLayout.Name = "ContentLayout";
+            this.ContentLayout.Size = new System.Drawing.Size(684, 401);
+            this.ContentLayout.TabIndex = 0;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 450);
+            this.ClientSize = new System.Drawing.Size(903, 450);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -429,6 +444,7 @@
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.toolStrip2.ResumeLayout(false);
@@ -481,5 +497,6 @@
         private System.Windows.Forms.ToolStripMenuItem calificacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem boletaDeCalificaionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitarToolStripMenuItem;
+        private System.Windows.Forms.Panel ContentLayout;
     }
 }

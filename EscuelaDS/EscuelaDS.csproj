@@ -270,6 +270,12 @@
     <Compile Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.Designer.cs">
       <DependentUpon>GestionEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Secretariado\Grupos\DetalleGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Grupos\DetalleGrupo.Designer.cs">
+      <DependentUpon>DetalleGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Secretariado\Grupos\GestionGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.resx">
       <DependentUpon>GestionEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Grupos\DetalleGrupo.resx">
+      <DependentUpon>DetalleGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Grupos\GestionGrupos.resx">
       <DependentUpon>GestionGrupos.cs</DependentUpon>
