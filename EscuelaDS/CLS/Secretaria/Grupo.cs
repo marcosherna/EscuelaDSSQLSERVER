@@ -51,7 +51,37 @@ namespace EscuelaDS.CLS.Secretaria
                     }).ToListAsync();
             }
             return grupos;
+        } 
+
+        public async static Task<List<GrupoTree>> GetTreeAsync()
+        {
+            List<GrupoTree> grupos = new List<GrupoTree>();
+            using (var context = new EscuelaDBContext())
+            {
+                grupos = await context.Grupos
+                    .Include(grupo => grupo.Docentes)
+                    .Include(grupo => grupo.Turnos)
+                    .Include(grupo => grupo.Aulas)
+                    .Include(grupo => grupo.Docentes.Empleados)
+                    .Select( grupo => new GrupoTree { 
+                        Id = grupo.ID_Grupo,
+                        Detalle = grupo.Grado + " " + grupo.Seccion,
+                        Profesor = new GrupoTree.Node { 
+                            Id = grupo.Docentes.ID_Docente,
+                            Detalle = grupo.Docentes.Empleados.NombresEmpleado + " " + grupo.Docentes.Empleados.ApellidosEmpleado
+                        },
+                        Estudies =  context.Matriculas
+                            .Where(matricula => matricula.ID_Grupo == grupo.ID_Grupo)
+                            .Select(matricula => matricula.Estudiantes)
+                            .Select(estudiante => new GrupoTree.Node { 
+                                Id = estudiante.NIE,
+                                Detalle = estudiante.NIE + " " + estudiante.NombresEstudiante + " " + estudiante.ApellidosEstudiante
+                            }).ToList(),
+                    }).ToListAsync();
+            }
+            return grupos;
         }
+
         public async static Task<Grupo> GetAsync(int id)
         {
             Grupo grupo = null;
@@ -136,6 +166,25 @@ namespace EscuelaDS.CLS.Secretaria
             }
             return result;
         }
-          
+
+        public async static Task<bool> DeleteAsync(int Id)
+        {
+            bool result = false;
+            using (var context = new EscuelaDBContext())
+            {
+                var grupo = await context.Grupos
+                    .Where(_grupo => _grupo.ID_Grupo == Id)
+                    .FirstOrDefaultAsync();
+
+                if (grupo != null)
+                {
+                    context.Grupos.Remove(grupo);
+                    int row = await context.SaveChangesAsync();
+                    result = row > 0;
+                }
+            }
+            return result;
+        }
+
     }
 }
