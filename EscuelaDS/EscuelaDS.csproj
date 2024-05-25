@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,6 +51,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -242,6 +248,12 @@
     <Compile Include="GUI\Rector\Docentes\GestionDocentes.Designer.cs">
       <DependentUpon>GestionDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Rector\Docentes\ViewReportDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Rector\Docentes\ViewReportDocente.Designer.cs">
+      <DependentUpon>ViewReportDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Rector\Materias\GestionMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +265,11 @@
     </Compile>
     <Compile Include="GUI\Rector\Turnos\GestionTurnos.Designer.cs">
       <DependentUpon>GestionTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reportes\docentesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>docentesReport.rpt</DependentUpon>
     </Compile>
     <Compile Include="GUI\Secretariado\Encargados\EdicionEncargados.cs">
       <SubType>Form</SubType>
@@ -340,11 +357,18 @@
     <EmbeddedResource Include="GUI\Rector\Docentes\GestionDocentes.resx">
       <DependentUpon>GestionDocentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Rector\Docentes\ViewReportDocente.resx">
+      <DependentUpon>ViewReportDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Rector\Materias\GestionMaterias.resx">
       <DependentUpon>GestionMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Rector\Turnos\GestionTurnos.resx">
       <DependentUpon>GestionTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reportes\docentesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>docentesReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Encargados\EdicionEncargados.resx">
       <DependentUpon>EdicionEncargados.cs</DependentUpon>
@@ -414,6 +438,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

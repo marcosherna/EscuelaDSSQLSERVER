@@ -139,5 +139,11 @@ namespace EscuelaDS.GUI.Rector.Docentes
             this.dtgDocentes.DataSource = docentes;
             this.docentes = docentes;
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ViewReportDocente viewReportDocente = new ViewReportDocente();
+            viewReportDocente.ShowDialog();
+        }
     }
 }

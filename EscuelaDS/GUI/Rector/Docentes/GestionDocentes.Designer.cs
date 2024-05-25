@@ -47,6 +47,7 @@
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.dtgDocentes = new System.Windows.Forms.DataGridView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -101,7 +102,7 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(42, 15);
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 22);
             this.toolStripLabel1.Text = "Buscar";
             // 
             // toolStrip2
@@ -113,7 +114,8 @@
             this.tsbModificar,
             this.toolStripSeparator8,
             this.tsbEliminar,
-            this.toolStripSeparator6});
+            this.toolStripSeparator6,
+            this.toolStripButton1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(770, 25);
@@ -181,6 +183,16 @@
             this.dtgDocentes.Size = new System.Drawing.Size(770, 275);
             this.dtgDocentes.TabIndex = 3;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton1.Text = "Reporte";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // GestionDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +234,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.DataGridView dtgDocentes;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
