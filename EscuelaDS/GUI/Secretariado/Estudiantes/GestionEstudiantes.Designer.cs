@@ -155,11 +155,12 @@
             // matriculadosToolStripMenuItem
             // 
             this.matriculadosToolStripMenuItem.Name = "matriculadosToolStripMenuItem";
-            this.matriculadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.matriculadosToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.matriculadosToolStripMenuItem.Text = "Matriculados";
             // 
             // toolStrip2
             // 
+            this.toolStrip2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.toolStripSeparator6,

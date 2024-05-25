@@ -315,6 +315,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(475, 580);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EdicioEstudiantes";
             this.Text = "EdicioEstudiantes";
             this.panel1.ResumeLayout(false);

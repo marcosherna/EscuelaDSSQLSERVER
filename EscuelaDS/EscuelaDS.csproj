@@ -270,6 +270,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>docentesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Secretariado\Encargados\EdicionEncargados.cs">
       <SubType>Form</SubType>

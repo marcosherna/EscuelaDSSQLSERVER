@@ -15,10 +15,26 @@ namespace EscuelaDS.GUI.Admnistracion.Empleados
     public partial class GestionEmpleado : Form
     {
         private Empleado empleadoSeleccionado = null;
+        List<EmpleadoDto> empleados = new List<EmpleadoDto>();
         public GestionEmpleado()
         {
             InitializeComponent();
             this.dtgEmpleados.SelectionChanged += DtgEmpleados_SelectionChanged;
+            this.txbSearch.TextChanged += TxbSearch_TextChanged;
+        }
+
+        private void TxbSearch_TextChanged(object sender, EventArgs e)
+        {  
+            if (empleados.Count > 0)
+            {
+                var filtro = this.empleados.Where(x => x.Descripcion.ToLower().Contains(this.txbSearch.Text.ToLower())).ToList();
+                this.dtgEmpleados.DataSource = filtro;
+            }
+
+            if(this.txbSearch.Text.Length == 0)
+            { 
+                this.dtgEmpleados.DataSource = this.empleados;
+            }
         }
 
         private async void DtgEmpleados_SelectionChanged(object sender, EventArgs e)
@@ -46,8 +62,8 @@ namespace EscuelaDS.GUI.Admnistracion.Empleados
 
         private async Task CargarEmpleados()
         { 
-            List<EmpleadoDto> empleados = await Empleado.GeAsync();
-            dtgEmpleados.DataSource = empleados;
+            this.empleados = await Empleado.GeAsync();
+            dtgEmpleados.DataSource = this.empleados;
         }
 
         private async void tsbAgregar_Click(object sender, EventArgs e)
