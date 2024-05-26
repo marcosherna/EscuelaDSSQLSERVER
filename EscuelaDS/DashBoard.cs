@@ -255,6 +255,7 @@ namespace EscuelaDS
             content.Show(); 
         }
 
+
         private async void asignarDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -275,6 +276,33 @@ namespace EscuelaDS
 
                 var grupo = await Grupo.GetAsync(Convert.ToInt32(nodeGrupo.Tag));
                 ShowContent(new DetalleCalificaciones(dto, grupo));
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void reporteMatriculaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // validate node not null
+
+                var nodeGrupo = this.tvGrupos.SelectedNode;
+                var nodeDocente = this.tvGrupos.SelectedNode.Nodes[0];
+
+                if (nodeDocente == null) throw new Exception("Seleccione un docente");
+                if (nodeGrupo == null) throw new Exception("Seleccione un grupo");
+
+                var dto = new DocenteDto
+                {
+                    Id = Convert.ToInt32(nodeDocente.Tag),
+                    Nombre = nodeDocente.Text
+                };
+
+                var grupo = await Grupo.GetAsync(Convert.ToInt32(nodeGrupo.Tag));
+                ShowContent(new ViewReportDocente(dto, grupo));
             }
             catch (Exception exc)
             {

@@ -73,11 +73,13 @@
     <Compile Include="CLS\Catalogos\Genero.cs" />
     <Compile Include="CLS\Catalogos\Municipio.cs" />
     <Compile Include="CLS\Catalogos\Pais.cs" />
+    <Compile Include="CLS\Dtos\CalificacionReporteDto.cs" />
     <Compile Include="CLS\Dtos\DepartamentoDto.cs" />
     <Compile Include="CLS\Dtos\DocenteDto.cs" />
     <Compile Include="CLS\Dtos\EmpleadoDto.cs" />
     <Compile Include="CLS\Dtos\EstudianteCalificadoDto.cs" />
     <Compile Include="CLS\Dtos\EstudianteDto.cs" />
+    <Compile Include="CLS\Dtos\EstudianteModelReportDto.cs" />
     <Compile Include="CLS\Dtos\GrupoCMBDto.cs" />
     <Compile Include="CLS\Dtos\GrupoDto.cs" />
     <Compile Include="CLS\Dtos\GrupoTree.cs" />
@@ -266,10 +268,22 @@
     <Compile Include="GUI\Rector\Turnos\GestionTurnos.Designer.cs">
       <DependentUpon>GestionTurnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Reportes\docentesReport.cs">
+    <Compile Include="GUI\Reportes\rBoletaCalificacion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>docentesReport.rpt</DependentUpon>
+      <DependentUpon>rBoletaCalificacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Reportes\rDocentes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rDocentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Reportes\rMatriculaGrupo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rMatriculaGrupo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Secretariado\Encargados\EdicionEncargados.cs">
@@ -367,9 +381,17 @@
     <EmbeddedResource Include="GUI\Rector\Turnos\GestionTurnos.resx">
       <DependentUpon>GestionTurnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Reportes\docentesReport.rpt">
+    <EmbeddedResource Include="GUI\Reportes\rBoletaCalificacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>docentesReport.cs</LastGenOutput>
+      <LastGenOutput>rBoletaCalificacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reportes\rDocentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rDocentes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reportes\rMatriculaGrupo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rMatriculaGrupo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Encargados\EdicionEncargados.resx">
       <DependentUpon>EdicionEncargados.cs</DependentUpon>

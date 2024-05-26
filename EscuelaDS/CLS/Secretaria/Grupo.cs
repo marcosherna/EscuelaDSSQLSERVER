@@ -1,4 +1,5 @@
 ﻿using EscuelaDS.CLS.Administracion;
+using EscuelaDS.CLS.Catalogos;
 using EscuelaDS.CLS.Dtos;
 using EscuelaDS.DataLayer;
 using System;
@@ -83,6 +84,7 @@ namespace EscuelaDS.CLS.Secretaria
             return grupos;
         }
 
+        // obtiene los estudiantes de un grupo
         public async Task<List<EstudianteCalificadoDto>> GetEstudiantesAsync()
         {
             List<EstudianteCalificadoDto> estudiantes = new List<EstudianteCalificadoDto>();
@@ -104,6 +106,26 @@ namespace EscuelaDS.CLS.Secretaria
             }
             return estudiantes;
         }
+
+        public async Task<List<EstudianteModelReportDto>> GetEstudianteModelReportDtoAsync()
+        {
+            List<EstudianteModelReportDto> estudiantes = new List<EstudianteModelReportDto>();
+            using (var context = new EscuelaDBContext())
+            {
+                estudiantes = await context.Matriculas
+                    .Where(matricula => matricula.ID_Grupo == this.Id)
+                    .Select(matricula => matricula.Estudiantes)
+                    .Select(estudiante => new EstudianteModelReportDto { 
+                        Id = estudiante.NIE,
+                        Nombre = estudiante.NombresEstudiante + " " + estudiante.ApellidosEstudiante,
+                        Edad = DateTime.Now.Year - estudiante.FechaNacEstudiante.Year, 
+                        Genero = estudiante.GeneroEstudiante == "1" ? "Hombre" : estudiante.GeneroEstudiante == "2" ? "Mujer" : "Otro",
+                        Seccion = this.Grado + " " + this.Seccion
+                    }).ToListAsync();
+            }
+            return estudiantes;
+        }
+
         public async static Task<Grupo> GetAsync(int id)
         {
             Grupo grupo = null;

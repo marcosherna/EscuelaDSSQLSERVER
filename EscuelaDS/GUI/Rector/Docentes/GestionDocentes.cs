@@ -142,8 +142,7 @@ namespace EscuelaDS.GUI.Rector.Docentes
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            ViewReportDocente viewReportDocente = new ViewReportDocente();
-            viewReportDocente.ShowDialog();
+           
         }
     }
 }

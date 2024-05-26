@@ -16,14 +16,14 @@ namespace EscuelaDS.GUI.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class docentesReport : ReportClass {
+    public class rBoletaCalificacion : ReportClass {
         
-        public docentesReport() {
+        public rBoletaCalificacion() {
         }
         
         public override string ResourceName {
             get {
-                return "docentesReport.rpt";
+                return "rBoletaCalificacion.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace EscuelaDS.GUI.Reportes {
         
         public override string FullResourceName {
             get {
-                return "EscuelaDS.GUI.Reportes.docentesReport.rpt";
+                return "EscuelaDS.GUI.Reportes.rBoletaCalificacion.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace EscuelaDS.GUI.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CacheddocentesReport : Component, ICachedReport {
+    public class CachedrBoletaCalificacion : Component, ICachedReport {
         
-        public CacheddocentesReport() {
+        public CachedrBoletaCalificacion() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace EscuelaDS.GUI.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            docentesReport rpt = new docentesReport();
+            rBoletaCalificacion rpt = new rBoletaCalificacion();
             rpt.Site = this.Site;
             return rpt;
         }

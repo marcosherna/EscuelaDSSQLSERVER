@@ -46,6 +46,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDocente = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,7 +83,9 @@
             this.toolStripSeparator3,
             this.toolStripButton3,
             this.toolStripSeparator4,
-            this.toolStripLabel2});
+            this.toolStripLabel2,
+            this.toolStripButton1,
+            this.toolStripSeparator5});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(800, 25);
@@ -207,6 +211,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Docente";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(105, 22);
+            this.toolStripButton1.Text = "Reporte Matricula";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
             // DetalleCalificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,5 +269,7 @@
         private System.Windows.Forms.Label lblDocente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgOpciones;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

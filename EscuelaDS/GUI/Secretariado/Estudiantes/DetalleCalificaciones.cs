@@ -1,5 +1,6 @@
 ﻿using EscuelaDS.CLS.Dtos;
 using EscuelaDS.CLS.Secretaria;
+using EscuelaDS.GUI.Rector.Docentes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,6 +69,12 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
             {
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ViewReportDocente viewReportDocente = new ViewReportDocente(docente, grupo);
+            viewReportDocente.ShowDialog();
         }
     }
 }

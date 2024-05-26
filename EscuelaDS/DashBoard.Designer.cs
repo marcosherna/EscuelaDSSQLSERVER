@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Grupos");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Grupos");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.catalogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionPaisToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +62,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.ContentLayout = new System.Windows.Forms.Panel();
             this.cmsGrupos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.matricularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +71,7 @@
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boletaDeCalificaionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContentLayout = new System.Windows.Forms.Panel();
+            this.reporteMatriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -281,10 +282,10 @@
             this.tvGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvGrupos.Location = new System.Drawing.Point(10, 25);
             this.tvGrupos.Name = "tvGrupos";
-            treeNode2.Name = "Nodo0";
-            treeNode2.Text = "Grupos";
+            treeNode1.Name = "Nodo0";
+            treeNode1.Text = "Grupos";
             this.tvGrupos.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.tvGrupos.Size = new System.Drawing.Size(195, 366);
             this.tvGrupos.TabIndex = 1;
             // 
@@ -359,19 +360,28 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // ContentLayout
+            // 
+            this.ContentLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentLayout.Location = new System.Drawing.Point(0, 0);
+            this.ContentLayout.Name = "ContentLayout";
+            this.ContentLayout.Size = new System.Drawing.Size(684, 401);
+            this.ContentLayout.TabIndex = 0;
+            // 
             // cmsGrupos
             // 
             this.cmsGrupos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.matricularToolStripMenuItem,
             this.asignarDToolStripMenuItem,
-            this.opToolStripMenuItem});
+            this.opToolStripMenuItem,
+            this.reporteMatriculaToolStripMenuItem});
             this.cmsGrupos.Name = "cmsGrupos";
-            this.cmsGrupos.Size = new System.Drawing.Size(181, 92);
+            this.cmsGrupos.Size = new System.Drawing.Size(181, 114);
             // 
             // matricularToolStripMenuItem
             // 
             this.matricularToolStripMenuItem.Name = "matricularToolStripMenuItem";
-            this.matricularToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.matricularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.matricularToolStripMenuItem.Text = "Matricular";
             this.matricularToolStripMenuItem.Click += new System.EventHandler(this.matricularToolStripMenuItem_Click);
             // 
@@ -385,7 +395,7 @@
             // opToolStripMenuItem
             // 
             this.opToolStripMenuItem.Name = "opToolStripMenuItem";
-            this.opToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.opToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.opToolStripMenuItem.Text = "Elimimar";
             this.opToolStripMenuItem.Click += new System.EventHandler(this.opToolStripMenuItem_Click);
             // 
@@ -417,13 +427,12 @@
             this.quitarToolStripMenuItem.Text = "Quitar";
             this.quitarToolStripMenuItem.Click += new System.EventHandler(this.quitarToolStripMenuItem_Click);
             // 
-            // ContentLayout
+            // reporteMatriculaToolStripMenuItem
             // 
-            this.ContentLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentLayout.Location = new System.Drawing.Point(0, 0);
-            this.ContentLayout.Name = "ContentLayout";
-            this.ContentLayout.Size = new System.Drawing.Size(684, 401);
-            this.ContentLayout.TabIndex = 0;
+            this.reporteMatriculaToolStripMenuItem.Name = "reporteMatriculaToolStripMenuItem";
+            this.reporteMatriculaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reporteMatriculaToolStripMenuItem.Text = "Reporte Matricula";
+            this.reporteMatriculaToolStripMenuItem.Click += new System.EventHandler(this.reporteMatriculaToolStripMenuItem_Click);
             // 
             // DashBoard
             // 
@@ -498,5 +507,6 @@
         private System.Windows.Forms.ToolStripMenuItem boletaDeCalificaionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitarToolStripMenuItem;
         private System.Windows.Forms.Panel ContentLayout;
+        private System.Windows.Forms.ToolStripMenuItem reporteMatriculaToolStripMenuItem;
     }
 }
