@@ -30,11 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleCalificaciones));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.tsbCalificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripTextBox();
@@ -46,8 +43,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDocente = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.abrirToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.imprimirToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pegarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,62 +58,36 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1});
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(80, 22);
-            this.toolStripLabel1.Text = "Calificaciones";
-            // 
             // toolStrip2
             // 
             this.toolStrip2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbCalificar,
+            this.pegarToolStripButton,
             this.toolStripSeparator1,
-            this.toolStripButton2,
+            this.abrirToolStripButton,
             this.toolStripSeparator2,
             this.toolStripSeparator3,
             this.toolStripButton3,
             this.toolStripSeparator4,
             this.toolStripLabel2,
-            this.toolStripButton1,
-            this.toolStripSeparator5});
+            this.imprimirToolStripButton});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(800, 25);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // tsbCalificar
-            // 
-            this.tsbCalificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbCalificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbCalificar.Image")));
-            this.tsbCalificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCalificar.Name = "tsbCalificar";
-            this.tsbCalificar.Size = new System.Drawing.Size(54, 22);
-            this.tsbCalificar.Text = "Calificar";
-            this.tsbCalificar.Click += new System.EventHandler(this.tsbCalificar_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(97, 22);
-            this.toolStripButton2.Text = "Libreta de Notas";
             // 
             // toolStripSeparator2
             // 
@@ -211,20 +184,39 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Docente";
             // 
+            // abrirToolStripButton
+            // 
+            this.abrirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripButton.Image")));
+            this.abrirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.abrirToolStripButton.Name = "abrirToolStripButton";
+            this.abrirToolStripButton.Size = new System.Drawing.Size(113, 22);
+            this.abrirToolStripButton.Text = "Libreta de Notas";
+            // 
+            // imprimirToolStripButton
+            // 
+            this.imprimirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripButton.Image")));
+            this.imprimirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.imprimirToolStripButton.Name = "imprimirToolStripButton";
+            this.imprimirToolStripButton.Size = new System.Drawing.Size(137, 22);
+            this.imprimirToolStripButton.Text = "Reporte de Matricula";
+            this.imprimirToolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // pegarToolStripButton
+            // 
+            this.pegarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pegarToolStripButton.Image")));
+            this.pegarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pegarToolStripButton.Name = "pegarToolStripButton";
+            this.pegarToolStripButton.Size = new System.Drawing.Size(70, 22);
+            this.pegarToolStripButton.Text = "Calificar";
+            this.pegarToolStripButton.Click += new System.EventHandler(this.tsbCalificar_Click);
+            // 
             // toolStripButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(105, 22);
-            this.toolStripButton1.Text = "Reporte Matricula";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.toolStripButton1.Size = new System.Drawing.Size(96, 22);
+            this.toolStripButton1.Text = "Calificaciones";
             // 
             // DetalleCalificaciones
             // 
@@ -253,11 +245,8 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton tsbCalificar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripTextBox toolStripButton3;
@@ -269,7 +258,9 @@
         private System.Windows.Forms.Label lblDocente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgOpciones;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton pegarToolStripButton;
+        private System.Windows.Forms.ToolStripButton abrirToolStripButton;
+        private System.Windows.Forms.ToolStripButton imprimirToolStripButton;
+        private System.Windows.Forms.ToolStripLabel toolStripButton1;
     }
 }

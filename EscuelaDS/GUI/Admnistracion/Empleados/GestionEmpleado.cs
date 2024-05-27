@@ -1,5 +1,6 @@
 ﻿using EscuelaDS.CLS.Administracion;
 using EscuelaDS.CLS.Dtos;
+using EscuelaDS.GUI.Auth.Usuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,6 +122,12 @@ namespace EscuelaDS.GUI.Admnistracion.Empleados
             {
                 MessageBox.Show("Error: " + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAsignarUsuario_Click(object sender, EventArgs e)
+        {
+            EdicionUsuario  edicionUsuario = new EdicionUsuario(empleadoSeleccionado.Id);
+            edicionUsuario.ShowDialog();
         }
     }
 }

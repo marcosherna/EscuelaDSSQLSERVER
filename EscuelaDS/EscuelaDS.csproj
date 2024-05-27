@@ -212,12 +212,6 @@
     <Compile Include="GUI\Admnistracion\GestionCargos.Designer.cs">
       <DependentUpon>GestionCargos.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Admnistracion\Usuarios\GestionUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Admnistracion\Usuarios\GestionUsuarios.Designer.cs">
-      <DependentUpon>GestionUsuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Auth\Asignacion\AsignacionRolesOpciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +229,12 @@
     </Compile>
     <Compile Include="GUI\Auth\Roles\GestionRoles.Designer.cs">
       <DependentUpon>GestionRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Auth\Usuario\EdicionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Auth\Usuario\EdicionUsuario.Designer.cs">
+      <DependentUpon>EdicionUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Catalogos\Departamento\GestionDepartamentos.cs">
       <SubType>Form</SubType>
@@ -385,9 +385,6 @@
     <EmbeddedResource Include="GUI\Admnistracion\GestionCargos.resx">
       <DependentUpon>GestionCargos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Admnistracion\Usuarios\GestionUsuarios.resx">
-      <DependentUpon>GestionUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Auth\Asignacion\AsignacionRolesOpciones.resx">
       <DependentUpon>AsignacionRolesOpciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Auth\Roles\GestionRoles.resx">
       <DependentUpon>GestionRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Auth\Usuario\EdicionUsuario.resx">
+      <DependentUpon>EdicionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Catalogos\Departamento\GestionDepartamentos.resx">
       <DependentUpon>GestionDepartamentos.cs</DependentUpon>

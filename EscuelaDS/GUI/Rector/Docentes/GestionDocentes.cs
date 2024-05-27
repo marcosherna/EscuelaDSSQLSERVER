@@ -1,6 +1,7 @@
 ﻿using EscuelaDS.CLS.Administracion;
 using EscuelaDS.CLS.Dtos;
 using EscuelaDS.CLS.Rector;
+using EscuelaDS.GUI.Auth.Usuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -143,6 +144,23 @@ namespace EscuelaDS.GUI.Rector.Docentes
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private async void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            try
+            { 
+                if (this.dtgDocentes.SelectedRows.Count < 0) throw new Exception("Porfavor Seleciona un registro antes de la accion");
+                if (!(this.dtgDocentes.CurrentRow.DataBoundItem is DocenteDto dto)) throw new Exception("No se pudo obtener el registro seleccionado");
+
+                var docente = await Docente.GetAsync(dto.Id);
+                EdicionUsuario edicionUsuario = new EdicionUsuario(docente.IdEmpleado);
+                var result = edicionUsuario.ShowDialog();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

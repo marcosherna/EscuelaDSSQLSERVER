@@ -74,6 +74,23 @@ namespace EscuelaDS.CLS.Auth
             return result;
         }
 
+        // TRAE LAS OPCIONES ASIGNADAS AL ROL
+        public async Task<List<Opcion>> GetOpcionesAsync()
+        {
+            List<Opcion> opciones = new List<Opcion>();
+            using (var context = new EscuelaDBContext())
+            {
+                opciones = await context.AsignacionRolesOpciones
+                    .Where(x => x.ID_Rol == this.Id)
+                    .Select(x => new Opcion
+                    {
+                        Id = x.ID_Opcion,
+                        Nombre = x.Opciones.NombreOpcion
+                    }).ToListAsync();
+            }
+            return opciones;
+        }
+
         public async static Task<List<Rol>> GetWithOpcionesAsync()
         {
             List<Rol> roles = new List<Rol>();

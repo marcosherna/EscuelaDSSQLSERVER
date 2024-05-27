@@ -34,9 +34,23 @@ namespace EscuelaDS
 {
     public partial class DashBoard : Form
     {
+        ImageList imageList = new ImageList();
         public DashBoard()
         {
             InitializeComponent();
+
+            //this.tvGrupos.ImageList = imageList;
+            var toolItems = toolIcon.Items;
+
+            foreach (var item in toolItems)
+            { 
+
+                if(item is ToolStripButton tool)
+                {
+                    imageList.Images.Add(tool.Image);
+                }
+            }
+             
         }
 
         protected override async void OnLoad(EventArgs e)
@@ -44,6 +58,8 @@ namespace EscuelaDS
             try
             {
                 await cargarGrupos();
+
+               
             }
             catch (Exception exc)
             {
@@ -55,11 +71,18 @@ namespace EscuelaDS
         private async Task cargarGrupos()
         { 
             var gruposTree =  await Grupo.GetTreeAsync();
+            this.tvGrupos.ImageList = imageList;
             TreeNode node = null;
+
+            this.tvGrupos.Nodes[0].ImageIndex = 1;
+            this.tvGrupos.Nodes[0].SelectedImageIndex = 1;
+
             gruposTree.ForEach(grupo => {                 
 
                 node = new TreeNode(grupo.Detalle);
                 node.Tag = grupo.Id;
+                node.ImageIndex = 6;
+                node.SelectedImageIndex = 6;
 
                 var nodeProfesor = new TreeNode(grupo.Profesor.Detalle);
                 nodeProfesor.Tag = grupo.Profesor.Id;  
@@ -71,10 +94,15 @@ namespace EscuelaDS
                 node.Expand();
 
                 node.Nodes.Add("Estudiantes");
+                node.Nodes[1].ImageIndex = 1;
+                node.Nodes[1].SelectedImageIndex = 1;
+
                 node.ContextMenuStrip = cmsGrupos;
 
                 grupo.Estudies.ForEach(estudiante => {
                     var nodeEstudiante = new TreeNode(estudiante.Detalle);
+                    
+
                     nodeEstudiante.Tag = estudiante.Id;
 
                     node.Nodes[1].Nodes.Add(nodeEstudiante);

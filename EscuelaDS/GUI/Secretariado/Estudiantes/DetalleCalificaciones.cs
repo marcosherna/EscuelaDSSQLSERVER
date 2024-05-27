@@ -22,6 +22,8 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
             InitializeComponent();
             this.docente = docente;
             this.grupo = grupo;
+
+            
         }
 
         protected override async void OnLoad(EventArgs e)
@@ -64,6 +66,8 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
                         frm.ShowDialog();
                     }
                 }
+
+                 
             }
             catch (Exception exc)
             {
@@ -75,6 +79,11 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
         {
             ViewReportDocente viewReportDocente = new ViewReportDocente(docente, grupo);
             viewReportDocente.ShowDialog();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
