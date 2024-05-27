@@ -26,6 +26,55 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
             InitializeComponent();
             this.estudiantes = estudiantes;
             this.docente = docente;
+            this.cmbMaterias.SelectedValueChanged += CmbMaterias_SelectedValueChanged;
+        }
+
+        private async void CmbMaterias_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                await CargarNotasMateria();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task CargarNotasMateria()
+        {
+            txbExamen1.Text = "0.0";
+            txbExamen2.Text = "0.0";
+            txbExamen3.Text = "0.0";
+            txbExamenFinal.Text = "0.0";
+            txbTareas.Text = "0.0";
+            lblPromedio.Text = "0.0";
+            calificacion = null;
+
+            if (estudiantes != null)
+            {
+                lblNie.Text = estudiantes.NIE.ToString();
+                lblNombreEstudiante.Text = estudiantes.Nombre;
+
+                if ((cmbMaterias.SelectedValue is int idmateria))
+                {
+                    calificacion = new Calificacion();
+                    calificacion.NIE = estudiantes.NIE;
+                    calificacion.IdMateria = Convert.ToInt32(idmateria);
+                    calificacion = await calificacion.GetCalificacionByIdEstudianteAndIdMateria();
+
+                    if (calificacion != null)
+                    {
+                        cmbMaterias.SelectedValue = calificacion.IdMateria;
+                        txbExamen1.Text = calificacion.Examen1.ToString();
+                        txbExamen2.Text = calificacion.Examen2.ToString();
+                        txbExamen3.Text = calificacion.Examen3.ToString();
+                        txbExamenFinal.Text = calificacion.ExamenFinal.ToString();
+                        txbTareas.Text = calificacion.Tareas.ToString();
+                        lblPromedio.Text = calificacion.Promedio.ToString();
+                    }
+                }
+            }
         }
 
         protected override async void OnLoad(EventArgs e)
@@ -44,12 +93,13 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
 
         private async Task CargarNotas()
         {
-            txbExamen1.Text = "0";
-            txbExamen2.Text = "0";
-            txbExamen3.Text = "0";
-            txbExamenFinal.Text = "0";
-            txbTareas.Text = "0";
-            lblPromedio.Text = "0";
+            txbExamen1.Text = "0.0";
+            txbExamen2.Text = "0.0";
+            txbExamen3.Text = "0.0";
+            txbExamenFinal.Text = "0.0";
+            txbTareas.Text = "0.0";
+            lblPromedio.Text = "0.0";
+            calificacion = null;
 
             if (estudiantes != null)
             {
@@ -67,9 +117,7 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
                     txbExamen3.Text = calificacion.Examen3.ToString();
                     txbExamenFinal.Text = calificacion.ExamenFinal.ToString();
                     txbTareas.Text = calificacion.Tareas.ToString();
-                    lblPromedio.Text = calificacion.Promedio.ToString(); 
-
-                    cmbMaterias.Enabled = false;
+                    lblPromedio.Text = calificacion.Promedio.ToString();  
                 }
             }
         }
