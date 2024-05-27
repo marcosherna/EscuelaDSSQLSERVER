@@ -5,6 +5,7 @@ using EscuelaDS.DataLayer;
 using EscuelaDS.GUI.Admnistracion;
 using EscuelaDS.GUI.Admnistracion.Empleados;
 using EscuelaDS.GUI.Admnistracion.Especialidad;
+using EscuelaDS.GUI.Auth.Roles;
 using EscuelaDS.GUI.Catalogos;
 using EscuelaDS.GUI.Catalogos.Departamento;
 using EscuelaDS.GUI.Catalogos.Distritos;
@@ -327,6 +328,12 @@ namespace EscuelaDS
             {
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void gestionDeRolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionRoles gestionRoles = new GestionRoles();
+            gestionRoles.ShowDialog();
         }
     }
 }

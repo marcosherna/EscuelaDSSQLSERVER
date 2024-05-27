@@ -68,6 +68,8 @@
     <Compile Include="CLS\Administracion\Direccion.cs" />
     <Compile Include="CLS\Administracion\Empleado.cs" />
     <Compile Include="CLS\Administracion\Especialidad.cs" />
+    <Compile Include="CLS\Administracion\Usuario.cs" />
+    <Compile Include="CLS\Auth\Rol.cs" />
     <Compile Include="CLS\Catalogos\Departamento.cs" />
     <Compile Include="CLS\Catalogos\Distrito.cs" />
     <Compile Include="CLS\Catalogos\Genero.cs" />
@@ -208,6 +210,18 @@
     </Compile>
     <Compile Include="GUI\Admnistracion\GestionCargos.Designer.cs">
       <DependentUpon>GestionCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admnistracion\Usuarios\GestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admnistracion\Usuarios\GestionUsuarios.Designer.cs">
+      <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Auth\Roles\GestionRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Auth\Roles\GestionRoles.Designer.cs">
+      <DependentUpon>GestionRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Catalogos\Departamento\GestionDepartamentos.cs">
       <SubType>Form</SubType>
@@ -358,6 +372,12 @@
     <EmbeddedResource Include="GUI\Admnistracion\GestionCargos.resx">
       <DependentUpon>GestionCargos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admnistracion\Usuarios\GestionUsuarios.resx">
+      <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Auth\Roles\GestionRoles.resx">
+      <DependentUpon>GestionRoles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Catalogos\Departamento\GestionDepartamentos.resx">
       <DependentUpon>GestionDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,7 +493,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GUI\Auth\Roles\NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

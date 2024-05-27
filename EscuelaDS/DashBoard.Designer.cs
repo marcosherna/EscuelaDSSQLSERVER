@@ -72,6 +72,8 @@
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boletaDeCalificaionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autenticacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -89,7 +91,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.catalogosToolStripMenuItem,
             this.administracionToolStripMenuItem,
-            this.rectoriaToolStripMenuItem});
+            this.rectoriaToolStripMenuItem,
+            this.autenticacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(903, 24);
@@ -413,7 +416,7 @@
             this.boletaDeCalificaionesToolStripMenuItem,
             this.quitarToolStripMenuItem});
             this.cmsEstudiantesC.Name = "cmsEstudiantesC";
-            this.cmsEstudiantesC.Size = new System.Drawing.Size(194, 92);
+            this.cmsEstudiantesC.Size = new System.Drawing.Size(194, 70);
             // 
             // calificacionesToolStripMenuItem
             // 
@@ -434,6 +437,21 @@
             this.quitarToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.quitarToolStripMenuItem.Text = "Quitar";
             this.quitarToolStripMenuItem.Click += new System.EventHandler(this.quitarToolStripMenuItem_Click);
+            // 
+            // autenticacionToolStripMenuItem
+            // 
+            this.autenticacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeRolesToolStripMenuItem});
+            this.autenticacionToolStripMenuItem.Name = "autenticacionToolStripMenuItem";
+            this.autenticacionToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.autenticacionToolStripMenuItem.Text = "Autenticacion";
+            // 
+            // gestionDeRolesToolStripMenuItem
+            // 
+            this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
+            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDeRolesToolStripMenuItem.Text = "Gestion de Roles";
+            this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
             // 
             // DashBoard
             // 
@@ -509,5 +527,7 @@
         private System.Windows.Forms.ToolStripMenuItem quitarToolStripMenuItem;
         private System.Windows.Forms.Panel ContentLayout;
         private System.Windows.Forms.ToolStripMenuItem reporteMatriculaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autenticacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
     }
 }
