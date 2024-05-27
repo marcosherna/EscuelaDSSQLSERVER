@@ -48,6 +48,30 @@ namespace EscuelaDS.CLS.Secretaria
             return result;
         }
 
+        public  async static Task<Calificacion> GetAsync(int id)
+        {
+            Calificacion calificacion = null;
+            using(var context = new EscuelaDBContext())
+            {
+                calificacion = await context.Calificaciones
+                    .Where(x => x.ID_Calificacion == id)
+                    .Select(_calificacion => new Calificacion { 
+                        Id = _calificacion.ID_Calificacion,
+                        IdMateria = _calificacion.ID_Materia,
+                        NIE = _calificacion.NIE,
+                        IdDocente = _calificacion.ID_Docente,
+                        Examen1 = (decimal)_calificacion.Examen1,
+                        Examen2 = (decimal)_calificacion.Examen2,
+                        Examen3 = (decimal)_calificacion.Examen3,
+                        ExamenFinal = (decimal)_calificacion.ExamenFinal,
+                        Tareas = (decimal)_calificacion.Tareas,
+                        Promedio = (decimal)_calificacion.Promedio, 
+                        Estado = _calificacion.Estado
+                    }).FirstOrDefaultAsync();
+            }
+            return calificacion;
+        }
+
         public async Task<bool> UpdateAsync()
         {
             bool result = false;

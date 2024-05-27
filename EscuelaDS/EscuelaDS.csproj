@@ -77,6 +77,7 @@
     <Compile Include="CLS\Catalogos\Municipio.cs" />
     <Compile Include="CLS\Catalogos\Pais.cs" />
     <Compile Include="CLS\Dtos\BoletaCalificaciones.cs" />
+    <Compile Include="CLS\Dtos\CalificacionMateriaDto.cs" />
     <Compile Include="CLS\Dtos\CalificacionRDto.cs" />
     <Compile Include="CLS\Dtos\DepartamentoDto.cs" />
     <Compile Include="CLS\Dtos\DocenteDto.cs" />
@@ -344,6 +345,18 @@
     <Compile Include="GUI\Secretariado\Estudiantes\EdicionCalificacion.Designer.cs">
       <DependentUpon>EdicionCalificacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\EdicionCalificacionMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\EdicionCalificacionMateria.Designer.cs">
+      <DependentUpon>EdicionCalificacionMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\GestionCalificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Secretariado\Estudiantes\GestionCalificacion.Designer.cs">
+      <DependentUpon>GestionCalificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +466,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Estudiantes\EdicionCalificacion.resx">
       <DependentUpon>EdicionCalificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Estudiantes\EdicionCalificacionMateria.resx">
+      <DependentUpon>EdicionCalificacionMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Secretariado\Estudiantes\GestionCalificacion.resx">
+      <DependentUpon>GestionCalificacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Secretariado\Estudiantes\GestionEstudiantes.resx">
       <DependentUpon>GestionEstudiantes.cs</DependentUpon>

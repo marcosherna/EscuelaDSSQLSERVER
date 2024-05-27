@@ -137,5 +137,28 @@ namespace EscuelaDS.GUI.Auth.Usuario
             if (!result) throw new Exception("No se pudo guardar el usuario");
             MessageBox.Show("Usuario guardado correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.usuario == null) throw new Exception("No se puede eliminar el usuario");
+
+                if (this.usuario != null)
+                {
+                    if (MessageBox.Show("¿Realmente desea eliminar el usuario?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        bool result =await this.usuario.DeleteAsync();
+                        if (!result) throw new Exception("No se pudo eliminar el usuario");
+                        MessageBox.Show("Usuario eliminado correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception exc)
+            { 
+                MessageBox.Show("Error: " + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

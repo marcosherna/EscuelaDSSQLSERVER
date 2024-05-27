@@ -181,6 +181,7 @@ namespace EscuelaDS.GUI.Secretariado.Estudiantes
                 if (result)
                 {
                     MessageBox.Show("Calificación guardada correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else

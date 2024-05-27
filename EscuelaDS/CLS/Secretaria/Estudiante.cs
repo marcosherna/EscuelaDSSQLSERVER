@@ -218,5 +218,27 @@ namespace EscuelaDS.CLS.Secretaria
             }
             return encargado;
         }
+
+        public async Task<List<CalificacionMateriaDto>> GetCalificacionesPorMateria()
+        {
+            List<CalificacionMateriaDto> calificaciones = new List<CalificacionMateriaDto>();
+            using (var context = new EscuelaDBContext())
+            {
+                calificaciones = await context.Calificaciones
+                    .Where(calificacion => calificacion.NIE == this.NIE)
+                    .Select(calificacion => new CalificacionMateriaDto
+                    {
+                        Id = calificacion.ID_Calificacion,
+                        Materia = calificacion.Materias.NombreMateria,
+                        Examen1 = (decimal)calificacion.Examen1,
+                        Examen2 = (decimal)calificacion.Examen2,
+                        Examen3 = (decimal)calificacion.Examen3,
+                        ExamenFinal = (decimal)calificacion.ExamenFinal,
+                        Tareas = (decimal)calificacion.Tareas,
+                        Estado = ((decimal)(((calificacion.Examen1 + calificacion.Examen2 + calificacion.Examen3 + calificacion.ExamenFinal + calificacion.Tareas) / 5))) >= 6 ? "Aprobado" : "Reprobado"
+                    }).ToListAsync();
+            }
+            return calificaciones;
+        }
     }
 }

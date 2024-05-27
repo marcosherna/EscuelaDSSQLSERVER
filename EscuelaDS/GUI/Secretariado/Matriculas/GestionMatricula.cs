@@ -26,10 +26,19 @@ namespace EscuelaDS.GUI.Secretariado.Matriculas
 
         private void TxbBuscar_TextChanged(object sender, EventArgs e)
         { 
-            this.dtgEstudiantes.DataSource = estudiantes
-                    .Where(estudiante => estudiante.Nombres.Contains(this.txbBuscar.Text) || 
+            if (this.dtgEstudiantes.DataSource is List<EstudianteDto> data)
+            {
+                var fillter = data.Where(estudiante => estudiante.Nombres.Contains(this.txbBuscar.Text) ||
                         estudiante.Apellidos.Contains(this.txbBuscar.Text))
                     .ToList();
+
+                this.dtgEstudiantes.DataSource = fillter;
+            } 
+                     
+
+            if(string.IsNullOrEmpty(this.txbBuscar.Text)) {
+                this.dtgEstudiantes.DataSource = estudiantes;
+            }
         }
 
         protected override async void OnLoad(EventArgs e)
@@ -57,6 +66,7 @@ namespace EscuelaDS.GUI.Secretariado.Matriculas
         { 
             var estudiantes = await Estudiante.GeAsync(); 
             dtgEstudiantes.DataSource = estudiantes;
+            this.estudiantes = estudiantes;
         }
 
         private async Task CargarGrupos()

@@ -85,5 +85,26 @@ namespace EscuelaDS.CLS.Rector
             return result;
         }
 
+        public async static Task<Materia> GetByNombre(string nombre)
+        {
+            Materia materia = null;
+            using (var context = new EscuelaDBContext())
+            {
+                var _materia = await context.Materias
+                    .Where(m => m.NombreMateria == nombre)
+                    .FirstOrDefaultAsync();
+
+                if (_materia != null)
+                {
+                    materia = new Materia
+                    {
+                        Id = _materia.ID_Materia,
+                        Nombre = _materia.NombreMateria
+                    };
+                }
+            }
+            return materia;
+        }
+
     }
 }

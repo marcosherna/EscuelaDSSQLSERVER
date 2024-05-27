@@ -41,6 +41,7 @@
             this.btnMatricular = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgEstudiantes = new System.Windows.Forms.DataGridView();
+            this.abrirToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstudiantes)).BeginInit();
@@ -57,10 +58,12 @@
             this.toolStripSeparator3,
             this.txbBuscar,
             this.toolStripSeparator4,
-            this.btnMatricular});
+            this.btnMatricular,
+            this.abrirToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(751, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(10);
+            this.toolStrip1.Size = new System.Drawing.Size(751, 43);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -70,23 +73,23 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(44, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(44, 20);
             this.toolStripButton1.Text = "Grupo";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // cmbGrupos
             // 
             this.cmbGrupos.Name = "cmbGrupos";
-            this.cmbGrupos.Size = new System.Drawing.Size(150, 25);
+            this.cmbGrupos.Size = new System.Drawing.Size(150, 23);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
             // toolStripButton3
             // 
@@ -94,25 +97,25 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(46, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(46, 20);
             this.toolStripButton3.Text = "Buscar";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
             // 
             // txbBuscar
             // 
             this.txbBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(200, 25);
+            this.txbBuscar.Size = new System.Drawing.Size(200, 23);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
             // btnMatricular
             // 
@@ -122,7 +125,7 @@
             this.btnMatricular.Image = ((System.Drawing.Image)(resources.GetObject("btnMatricular.Image")));
             this.btnMatricular.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMatricular.Name = "btnMatricular";
-            this.btnMatricular.Size = new System.Drawing.Size(65, 22);
+            this.btnMatricular.Size = new System.Drawing.Size(65, 20);
             this.btnMatricular.Text = "Matricular";
             this.btnMatricular.Click += new System.EventHandler(this.btnMatricular_Click);
             // 
@@ -130,10 +133,10 @@
             // 
             this.panel1.Controls.Add(this.dtgEstudiantes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.panel1.Size = new System.Drawing.Size(751, 348);
+            this.panel1.Size = new System.Drawing.Size(751, 330);
             this.panel1.TabIndex = 1;
             // 
             // dtgEstudiantes
@@ -144,8 +147,18 @@
             this.dtgEstudiantes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgEstudiantes.Location = new System.Drawing.Point(15, 0);
             this.dtgEstudiantes.Name = "dtgEstudiantes";
-            this.dtgEstudiantes.Size = new System.Drawing.Size(721, 348);
+            this.dtgEstudiantes.Size = new System.Drawing.Size(721, 330);
             this.dtgEstudiantes.TabIndex = 0;
+            // 
+            // abrirToolStripButton
+            // 
+            this.abrirToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.abrirToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.abrirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripButton.Image")));
+            this.abrirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.abrirToolStripButton.Name = "abrirToolStripButton";
+            this.abrirToolStripButton.Size = new System.Drawing.Size(23, 20);
+            this.abrirToolStripButton.Text = "&Abrir";
             // 
             // GestionMatricula
             // 
@@ -180,5 +193,6 @@
         private System.Windows.Forms.ToolStripButton btnMatricular;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtgEstudiantes;
+        private System.Windows.Forms.ToolStripButton abrirToolStripButton;
     }
 }

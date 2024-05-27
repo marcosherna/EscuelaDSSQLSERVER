@@ -380,5 +380,27 @@ namespace EscuelaDS
             GUI.Auth.Asignacion.AsignacionRolesOpciones asignacionRolesOpciones = new GUI.Auth.Asignacion.AsignacionRolesOpciones();
             asignacionRolesOpciones.ShowDialog();
         }
+
+        private void calificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var nodoEstudiante = this.tvGrupos.SelectedNode;
+                var nodoDocente = this.tvGrupos.SelectedNode.Parent.Parent.Nodes[0];
+
+                if (nodoEstudiante == null) throw new Exception("Seleccione un estudiante");
+                if (nodoDocente == null) throw new Exception("Seleccione un estudiante");
+
+                var estudiante = new Estudiante { NIE = Convert.ToInt32(nodoEstudiante.Tag), Nombres = nodoEstudiante.Text };
+                var docente = new DocenteDto { Id = Convert.ToInt32(nodoDocente.Tag) };
+
+                ShowContent(new GestionCalificacion(estudiante, docente));
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
