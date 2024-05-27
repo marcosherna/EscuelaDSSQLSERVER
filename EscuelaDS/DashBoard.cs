@@ -13,6 +13,7 @@ using EscuelaDS.GUI.Rector.Aulas;
 using EscuelaDS.GUI.Rector.Docentes;
 using EscuelaDS.GUI.Rector.Materias;
 using EscuelaDS.GUI.Rector.Turnos;
+using EscuelaDS.GUI.Reportes.View;
 using EscuelaDS.GUI.Secretariado.Estudiantes;
 using EscuelaDS.GUI.Secretariado.Grupos;
 using EscuelaDS.GUI.Secretariado.Matriculas;
@@ -303,6 +304,24 @@ namespace EscuelaDS
 
                 var grupo = await Grupo.GetAsync(Convert.ToInt32(nodeGrupo.Tag));
                 ShowContent(new ViewReportDocente(dto, grupo));
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void boletaDeCalificaionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var nodeGrupo = this.tvGrupos.SelectedNode.Parent.Parent;
+                if (nodeGrupo == null) throw new Exception("Seleccione un estudiante");
+
+                int idGrupo = Convert.ToInt32(nodeGrupo.Tag);
+                int idEstudiante = Convert.ToInt32(this.tvGrupos.SelectedNode.Tag);
+
+                ShowContent(new BoletaCalificacion(new Grupo { Id = idGrupo }, idEstudiante));
             }
             catch (Exception exc)
             {

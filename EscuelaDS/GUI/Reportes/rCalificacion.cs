@@ -16,14 +16,14 @@ namespace EscuelaDS.GUI.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rBoletaCalificacion : ReportClass {
+    public class rCalificacion : ReportClass {
         
-        public rBoletaCalificacion() {
+        public rCalificacion() {
         }
         
         public override string ResourceName {
             get {
-                return "rBoletaCalificacion.rpt";
+                return "rCalificacion.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace EscuelaDS.GUI.Reportes {
         
         public override string FullResourceName {
             get {
-                return "EscuelaDS.GUI.Reportes.rBoletaCalificacion.rpt";
+                return "EscuelaDS.GUI.Reportes.rCalificacion.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,68 @@ namespace EscuelaDS.GUI.Reportes {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_grupo {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_seccion {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_estudiante {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_docente {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_promedioGeneral {
+            get {
+                return this.DataDefinition.ParameterFields[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_nie {
+            get {
+                return this.DataDefinition.ParameterFields[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_grado {
+            get {
+                return this.DataDefinition.ParameterFields[6];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrBoletaCalificacion : Component, ICachedReport {
+    public class CachedrCalificacion : Component, ICachedReport {
         
-        public CachedrBoletaCalificacion() {
+        public CachedrCalificacion() {
         }
         
         [Browsable(false)]
@@ -129,7 +185,7 @@ namespace EscuelaDS.GUI.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rBoletaCalificacion rpt = new rBoletaCalificacion();
+            rCalificacion rpt = new rCalificacion();
             rpt.Site = this.Site;
             return rpt;
         }

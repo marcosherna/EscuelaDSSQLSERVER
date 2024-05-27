@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace EscuelaDS.CLS.Dtos
 {
-    public class CalificacionReporteDto
+    public class CalificacionRDto
     {
         public string Materia { get; set; }
         public decimal Calificacion { get; set; }
         public string Estado { get; set; }
+
+        // tomar dos decimales
+        public string CalificacionString
+        {
+            get
+            {
+                return Calificacion.ToString("0.00");
+            }
+        }
     }
 }

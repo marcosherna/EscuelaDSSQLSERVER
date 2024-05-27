@@ -67,11 +67,11 @@
             this.matricularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteMatriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsEstudiantesC = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boletaDeCalificaionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteMatriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -376,28 +376,35 @@
             this.opToolStripMenuItem,
             this.reporteMatriculaToolStripMenuItem});
             this.cmsGrupos.Name = "cmsGrupos";
-            this.cmsGrupos.Size = new System.Drawing.Size(181, 114);
+            this.cmsGrupos.Size = new System.Drawing.Size(169, 92);
             // 
             // matricularToolStripMenuItem
             // 
             this.matricularToolStripMenuItem.Name = "matricularToolStripMenuItem";
-            this.matricularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.matricularToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.matricularToolStripMenuItem.Text = "Matricular";
             this.matricularToolStripMenuItem.Click += new System.EventHandler(this.matricularToolStripMenuItem_Click);
             // 
             // asignarDToolStripMenuItem
             // 
             this.asignarDToolStripMenuItem.Name = "asignarDToolStripMenuItem";
-            this.asignarDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarDToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.asignarDToolStripMenuItem.Text = "Detalle";
             this.asignarDToolStripMenuItem.Click += new System.EventHandler(this.asignarDToolStripMenuItem_Click);
             // 
             // opToolStripMenuItem
             // 
             this.opToolStripMenuItem.Name = "opToolStripMenuItem";
-            this.opToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.opToolStripMenuItem.Text = "Elimimar";
             this.opToolStripMenuItem.Click += new System.EventHandler(this.opToolStripMenuItem_Click);
+            // 
+            // reporteMatriculaToolStripMenuItem
+            // 
+            this.reporteMatriculaToolStripMenuItem.Name = "reporteMatriculaToolStripMenuItem";
+            this.reporteMatriculaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.reporteMatriculaToolStripMenuItem.Text = "Reporte Matricula";
+            this.reporteMatriculaToolStripMenuItem.Click += new System.EventHandler(this.reporteMatriculaToolStripMenuItem_Click);
             // 
             // cmsEstudiantesC
             // 
@@ -406,7 +413,7 @@
             this.boletaDeCalificaionesToolStripMenuItem,
             this.quitarToolStripMenuItem});
             this.cmsEstudiantesC.Name = "cmsEstudiantesC";
-            this.cmsEstudiantesC.Size = new System.Drawing.Size(194, 70);
+            this.cmsEstudiantesC.Size = new System.Drawing.Size(194, 92);
             // 
             // calificacionesToolStripMenuItem
             // 
@@ -419,6 +426,7 @@
             this.boletaDeCalificaionesToolStripMenuItem.Name = "boletaDeCalificaionesToolStripMenuItem";
             this.boletaDeCalificaionesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.boletaDeCalificaionesToolStripMenuItem.Text = "Boleta de Calificaiones";
+            this.boletaDeCalificaionesToolStripMenuItem.Click += new System.EventHandler(this.boletaDeCalificaionesToolStripMenuItem_Click);
             // 
             // quitarToolStripMenuItem
             // 
@@ -426,13 +434,6 @@
             this.quitarToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.quitarToolStripMenuItem.Text = "Quitar";
             this.quitarToolStripMenuItem.Click += new System.EventHandler(this.quitarToolStripMenuItem_Click);
-            // 
-            // reporteMatriculaToolStripMenuItem
-            // 
-            this.reporteMatriculaToolStripMenuItem.Name = "reporteMatriculaToolStripMenuItem";
-            this.reporteMatriculaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteMatriculaToolStripMenuItem.Text = "Reporte Matricula";
-            this.reporteMatriculaToolStripMenuItem.Click += new System.EventHandler(this.reporteMatriculaToolStripMenuItem_Click);
             // 
             // DashBoard
             // 

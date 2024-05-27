@@ -175,6 +175,29 @@ namespace EscuelaDS.CLS.Secretaria
             return direccion;
         }
 
+        public async Task<BoletaCalificaciones> GetBoletaCalificacionesAsync()
+        {
+            BoletaCalificaciones boleta = new BoletaCalificaciones();
+            using (var context = new EscuelaDBContext())
+            {
+                boleta = await context.Estudiantes
+                    .Where(estudiante => estudiante.NIE == this.NIE)
+                    .Select(estudiante => new BoletaCalificaciones
+                    {
+                        NIE = estudiante.NIE,
+                        Estudiante = estudiante.NombresEstudiante + " " + estudiante.ApellidosEstudiante, 
+                        Calificaciones = estudiante.Calificaciones.Select(calificacion => new CalificacionRDto
+                        {
+                            Materia = calificacion.Materias.NombreMateria,
+                            // calcular califcacion promedio con los examenes y tarea 
+                            Calificacion = (decimal)(((calificacion.Examen1 + calificacion.Examen2 + calificacion.Examen3 + calificacion.ExamenFinal + calificacion.Tareas) / 5)),
+                            Estado = ((decimal)(((calificacion.Examen1 + calificacion.Examen2 + calificacion.Examen3 + calificacion.ExamenFinal + calificacion.Tareas) / 5))) >= 6 ? "Aprobado" : "Reprobado"
+                        }).ToList()
+                    }).FirstOrDefaultAsync();
+            }
+            return boleta;
+        }
+
         public async Task<Encargado> GetEncargadoAsync()
         {
             Encargado encargado = null;

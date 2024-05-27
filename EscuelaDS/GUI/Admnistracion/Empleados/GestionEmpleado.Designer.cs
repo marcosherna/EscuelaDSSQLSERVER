@@ -40,11 +40,11 @@
             this.txbSearch = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripLabel();
+            this.btnAsignarUsuario = new System.Windows.Forms.ToolStripButton();
             this.dtgEmpleados = new System.Windows.Forms.DataGridView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tsbHeader = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).BeginInit();
@@ -65,7 +65,7 @@
             this.txbSearch,
             this.toolStripSeparator4,
             this.toolStripButton5,
-            this.toolStripButton1});
+            this.btnAsignarUsuario});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -146,6 +146,15 @@
             this.toolStripButton5.Size = new System.Drawing.Size(42, 22);
             this.toolStripButton5.Text = "Buscar";
             // 
+            // btnAsignarUsuario
+            // 
+            this.btnAsignarUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnAsignarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarUsuario.Image")));
+            this.btnAsignarUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAsignarUsuario.Name = "btnAsignarUsuario";
+            this.btnAsignarUsuario.Size = new System.Drawing.Size(94, 22);
+            this.btnAsignarUsuario.Text = "Asignar Usuario";
+            // 
             // dtgEmpleados
             // 
             this.dtgEmpleados.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
@@ -156,15 +165,6 @@
             this.dtgEmpleados.Name = "dtgEmpleados";
             this.dtgEmpleados.Size = new System.Drawing.Size(800, 400);
             this.dtgEmpleados.TabIndex = 0;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(94, 22);
-            this.toolStripButton1.Text = "Asignar Usuario";
             // 
             // tsbHeader
             // 
@@ -178,6 +178,12 @@
             this.tsbHeader.TabIndex = 2;
             this.tsbHeader.Text = "toolStrip2";
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(65, 22);
+            this.toolStripLabel1.Text = "Empleados";
+            // 
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -186,12 +192,6 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(65, 22);
-            this.toolStripLabel1.Text = "Empleados";
             // 
             // panel2
             // 
@@ -237,7 +237,7 @@
         private System.Windows.Forms.ToolStripButton tsbAgregar;
         private System.Windows.Forms.ToolStripLabel toolStripButton5;
         private System.Windows.Forms.DataGridView dtgEmpleados;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnAsignarUsuario;
         private System.Windows.Forms.ToolStrip tsbHeader;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton4;

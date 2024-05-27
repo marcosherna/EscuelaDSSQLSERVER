@@ -52,8 +52,35 @@ namespace EscuelaDS.CLS.Secretaria
                     }).ToListAsync();
             }
             return grupos;
-        } 
-         
+        }
+
+        public async Task<BoletaCalificaciones> GetBoletaCalificacionesAsync(int idEstudiante)
+        {
+            BoletaCalificaciones boleta = new BoletaCalificaciones();
+            using (var context = new EscuelaDBContext())
+            {
+                boleta = await context.Matriculas
+                    .Where(matricula => matricula.ID_Grupo == this.Id && matricula.NIE == idEstudiante)
+                    .Select(matricula => new BoletaCalificaciones
+                    {
+                        NIE = matricula.Estudiantes.NIE,
+                        Estudiante = matricula.Estudiantes.NombresEstudiante + " " + matricula.Estudiantes.ApellidosEstudiante,
+                        Docente = matricula.Grupos.Docentes.Empleados.NombresEmpleado + " " + matricula.Grupos.Docentes.Empleados.ApellidosEmpleado,
+                        Grado = matricula.Grupos.Grado,
+                        Seccion = matricula.Grupos.Seccion,
+                        Calificaciones = context.Calificaciones
+                            .Where(calificacion => calificacion.NIE == idEstudiante)
+                            .Select(calificacion => new CalificacionRDto
+                            {
+                                Materia = calificacion.Materias.NombreMateria,
+                                Calificacion = (decimal)(((calificacion.Examen1 + calificacion.Examen2 + calificacion.Examen3 + calificacion.ExamenFinal + calificacion.Tareas) / 5)),
+                                Estado = ((decimal)(((calificacion.Examen1 + calificacion.Examen2 + calificacion.Examen3 + calificacion.ExamenFinal + calificacion.Tareas) / 5))) >= 6 ? "Aprobado" : "Reprobado"
+                            }).ToList()
+                    }).FirstOrDefaultAsync();
+                boleta.CalcularPromedioGeneral();
+            }
+            return boleta;
+        }
 
         public async static Task<List<GrupoTree>> GetTreeAsync()
         {
