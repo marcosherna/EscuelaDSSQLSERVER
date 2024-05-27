@@ -68,6 +68,8 @@ namespace EscuelaDS
 
                 node.Nodes.Add(nodeProfesor);
 
+                node.Expand();
+
                 node.Nodes.Add("Estudiantes");
                 node.ContextMenuStrip = cmsGrupos;
 
@@ -79,7 +81,9 @@ namespace EscuelaDS
                     nodeEstudiante.ContextMenuStrip = cmsEstudiantesC;
                 });
 
-            });  
+            });
+
+            tvGrupos.Nodes[0].Expand(); 
         } 
 
         #region navegaciones
@@ -341,6 +345,12 @@ namespace EscuelaDS
         {
             GestionOpciones gestionOpciones = new GestionOpciones();
             gestionOpciones.ShowDialog();
+        }
+
+        private void asignacionDeOpcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GUI.Auth.Asignacion.AsignacionRolesOpciones asignacionRolesOpciones = new GUI.Auth.Asignacion.AsignacionRolesOpciones();
+            asignacionRolesOpciones.ShowDialog();
         }
     }
 }

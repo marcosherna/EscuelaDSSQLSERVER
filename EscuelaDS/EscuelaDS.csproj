@@ -68,9 +68,9 @@
     <Compile Include="CLS\Administracion\Direccion.cs" />
     <Compile Include="CLS\Administracion\Empleado.cs" />
     <Compile Include="CLS\Administracion\Especialidad.cs" />
-    <Compile Include="CLS\Administracion\Usuario.cs" />
     <Compile Include="CLS\Auth\Opcion.cs" />
     <Compile Include="CLS\Auth\Rol.cs" />
+    <Compile Include="CLS\Auth\Usuario.cs" />
     <Compile Include="CLS\Catalogos\Departamento.cs" />
     <Compile Include="CLS\Catalogos\Distrito.cs" />
     <Compile Include="CLS\Catalogos\Genero.cs" />
@@ -217,6 +217,12 @@
     </Compile>
     <Compile Include="GUI\Admnistracion\Usuarios\GestionUsuarios.Designer.cs">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Auth\Asignacion\AsignacionRolesOpciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Auth\Asignacion\AsignacionRolesOpciones.Designer.cs">
+      <DependentUpon>AsignacionRolesOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Auth\Opciones\GestionOpciones.cs">
       <SubType>Form</SubType>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admnistracion\Usuarios\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Auth\Asignacion\AsignacionRolesOpciones.resx">
+      <DependentUpon>AsignacionRolesOpciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Auth\Opciones\GestionOpciones.resx">
       <DependentUpon>GestionOpciones.cs</DependentUpon>

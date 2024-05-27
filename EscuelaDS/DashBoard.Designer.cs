@@ -50,6 +50,7 @@
             this.gestionDeGruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autenticacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeOpcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -74,7 +75,7 @@
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boletaDeCalificaionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeOpcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignacionDeOpcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -229,7 +230,8 @@
             // 
             this.autenticacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDeRolesToolStripMenuItem,
-            this.gestionDeOpcionesToolStripMenuItem});
+            this.gestionDeOpcionesToolStripMenuItem,
+            this.asignacionDeOpcionesToolStripMenuItem});
             this.autenticacionToolStripMenuItem.Name = "autenticacionToolStripMenuItem";
             this.autenticacionToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.autenticacionToolStripMenuItem.Text = "Autenticacion";
@@ -237,9 +239,16 @@
             // gestionDeRolesToolStripMenuItem
             // 
             this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
-            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.gestionDeRolesToolStripMenuItem.Text = "Gestion de Roles";
             this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
+            // 
+            // gestionDeOpcionesToolStripMenuItem
+            // 
+            this.gestionDeOpcionesToolStripMenuItem.Name = "gestionDeOpcionesToolStripMenuItem";
+            this.gestionDeOpcionesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.gestionDeOpcionesToolStripMenuItem.Text = "Gestion de Opciones";
+            this.gestionDeOpcionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeOpcionesToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -455,12 +464,12 @@
             this.quitarToolStripMenuItem.Text = "Quitar";
             this.quitarToolStripMenuItem.Click += new System.EventHandler(this.quitarToolStripMenuItem_Click);
             // 
-            // gestionDeOpcionesToolStripMenuItem
+            // asignacionDeOpcionesToolStripMenuItem
             // 
-            this.gestionDeOpcionesToolStripMenuItem.Name = "gestionDeOpcionesToolStripMenuItem";
-            this.gestionDeOpcionesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.gestionDeOpcionesToolStripMenuItem.Text = "Gestion de Opciones";
-            this.gestionDeOpcionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeOpcionesToolStripMenuItem_Click);
+            this.asignacionDeOpcionesToolStripMenuItem.Name = "asignacionDeOpcionesToolStripMenuItem";
+            this.asignacionDeOpcionesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.asignacionDeOpcionesToolStripMenuItem.Text = "Asignacion de Opciones";
+            this.asignacionDeOpcionesToolStripMenuItem.Click += new System.EventHandler(this.asignacionDeOpcionesToolStripMenuItem_Click);
             // 
             // DashBoard
             // 
@@ -539,5 +548,6 @@
         private System.Windows.Forms.ToolStripMenuItem autenticacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeOpcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignacionDeOpcionesToolStripMenuItem;
     }
 }
